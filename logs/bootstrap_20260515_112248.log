@@ -1,0 +1,452 @@
+============================================================
+macOS FRESH INSTALL BOOTSTRAP - Fri May 15 11:22:48 EDT 2026
+============================================================
+
+[INFO] [1/12] Checking Xcode CLI tools...
+[INFO] Xcode CLI tools already installed
+[INFO] [2/12] Checking Homebrew...
+[INFO] Homebrew already installed
+[INFO] [3/12] Installing languages...
+[INFO] node already installed
+[INFO] python already installed
+[INFO] r already installed
+[INFO] julia already installed
+[INFO] go already installed
+[INFO] lua already installed
+[INFO] [4/12] Installing package managers...
+[INFO] nvm already installed
+> install.packages("pak", repos="https://cloud.r-project.org/")
+Installing package into ‘/opt/homebrew/lib/R/4.6/site-library’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/pak_0.9.5.tar.gz'
+Content type 'application/x-gzip' length 3336780 bytes (3.2 MB)
+==================================================
+downloaded 3.2 MB
+
+* installing *source* package ‘pak’ ...
+** this is package ‘pak’ version ‘0.9.5’
+** package ‘pak’ successfully unpacked and MD5 sums checked
+** using staged installation
+** Running ./configure
+** libs
+Current platform: aarch64-apple-darwin25.4.0 
+Build platform:   
+Target platform:   
+
+Compiling R6 
+
+Compiling cli 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c ansi.c -o ansi.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c diff.c -o diff.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c errors.c -o errors.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c glue.c -o glue.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c inst.c -o inst.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c keypress-unix.c -o keypress-unix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c keypress-win.c -o keypress-win.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c keypress.c -o keypress.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c md5.c -o md5.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c progress-altrep.c -o progress-altrep.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c progress.c -o progress.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c sha1.c -o sha1.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c sha256.c -o sha256.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c thread.c -o thread.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c tty.c -o tty.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c utf8.c -o utf8.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c utils.c -o utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c vt.c -o vt.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c vtparse.c -o vtparse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c vtparse_table.c -o vtparse_table.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c win-utf8.c -o win-utf8.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c winfiles.c -o winfiles.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c xxhash.c -o xxhash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c xxhash2.c -o xxhash2.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o cli.so ansi.o cleancall.o diff.o errors.o glue.o init.o inst.o keypress-unix.o keypress-win.o keypress.o md5.o progress-altrep.o progress.o sha1.o sha256.o thread.o tty.o utf8.o utils.o vt.o vtparse.o vtparse_table.o win-utf8.o winfiles.o xxhash.o xxhash2.o -lpthread -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/cli/libs
+
+Compiling curl 
+Using PKG_CFLAGS=
+Using PKG_LIBS=-lcurl
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+rm -f curl.so callbacks.o curl.o download.o escape.o fetch.o findport.o form.o getdate.o handle.o ieproxy.o init.o interrupt.o multi.o nslookup.o options.o reflist.o split.o ssl.o typechecking.o utils.o version.o winidn.o writer.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c callbacks.c -o callbacks.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c curl.c -o curl.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c download.c -o download.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c escape.c -o escape.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c fetch.c -o fetch.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c findport.c -o findport.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c form.c -o form.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c getdate.c -o getdate.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c handle.c -o handle.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c ieproxy.c -o ieproxy.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c interrupt.c -o interrupt.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c multi.c -o multi.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c nslookup.c -o nslookup.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c options.c -o options.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c reflist.c -o reflist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c split.c -o split.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c ssl.c -o ssl.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c typechecking.c -o typechecking.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c utils.c -o utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c version.c -o version.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c winidn.c -o winidn.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c writer.c -o writer.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o curl.so callbacks.o curl.o download.o escape.o fetch.o findport.o form.o getdate.o handle.o ieproxy.o init.o interrupt.o multi.o nslookup.o options.o reflist.o split.o ssl.o typechecking.o utils.o version.o winidn.o writer.o -lcurl -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/curl/libs
+
+Compiling filelock 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+rm -f filelock.so init.o filelock-unix.o locklist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c filelock-unix.c -o filelock-unix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c locklist.c -o locklist.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o filelock.so init.o filelock-unix.o locklist.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/filelock/libs
+
+Compiling jsonlite 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c base64.c -o base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c collapse_array.c -o collapse_array.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c collapse_object.c -o collapse_object.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c collapse_pretty.c -o collapse_pretty.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c escape_chars.c -o escape_chars.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c integer64_to_na.c -o integer64_to_na.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c is_datelist.c -o is_datelist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c is_recordlist.c -o is_recordlist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c is_scalarlist.c -o is_scalarlist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c modp_numtoa.c -o modp_numtoa.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c null_to_na.c -o null_to_na.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c num_to_char.c -o num_to_char.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c parse.c -o parse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c prettify.c -o prettify.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c push_parser.c -o push_parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c r-base64.c -o r-base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c register.c -o register.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c row_collapse.c -o row_collapse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c transpose_list.c -o transpose_list.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c validate.c -o validate.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl.c -o yajl/yajl.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_alloc.c -o yajl/yajl_alloc.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_buf.c -o yajl/yajl_buf.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_encode.c -o yajl/yajl_encode.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_gen.c -o yajl/yajl_gen.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_lex.c -o yajl/yajl_lex.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_parser.c -o yajl/yajl_parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_tree.c -o yajl/yajl_tree.o
+ar rcs yajl/libstatyajl.a yajl/yajl.o yajl/yajl_alloc.o yajl/yajl_buf.o yajl/yajl_encode.o yajl/yajl_gen.o yajl/yajl_lex.o yajl/yajl_parser.o yajl/yajl_tree.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o jsonlite.so base64.o collapse_array.o collapse_object.o collapse_pretty.o escape_chars.o integer64_to_na.o is_datelist.o is_recordlist.o is_scalarlist.o modp_numtoa.o null_to_na.o num_to_char.o parse.o prettify.o push_parser.o r-base64.o register.o row_collapse.o transpose_list.o validate.o -Lyajl -lstatyajl -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/jsonlite/libs
+in method for ‘asJSON’ with signature ‘"AsIs"’: no definition for class “AsIs”
+in method for ‘asJSON’ with signature ‘"ITime"’: no definition for class “ITime”
+in method for ‘asJSON’ with signature ‘"hms"’: no definition for class “hms”
+in method for ‘asJSON’ with signature ‘"json"’: no definition for class “json”
+in method for ‘asJSON’ with signature ‘"integer64"’: no definition for class “integer64”
+in method for ‘asJSON’ with signature ‘"pairlist"’: no definition for class “pairlist”
+in method for ‘asJSON’ with signature ‘"blob"’: no definition for class “blob”
+in method for ‘asJSON’ with signature ‘"scalar"’: no definition for class “scalar”
+in method for ‘asJSON’ with signature ‘"sf"’: no definition for class “sf”
+in method for ‘asJSON’ with signature ‘"sfc"’: no definition for class “sfc”
+in method for ‘asJSON’ with signature ‘"vctrs_vctr"’: no definition for class “vctrs_vctr”
+
+Compiling lpSolve 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c colamd.c -o colamd.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c commonlib.c -o commonlib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c hbio.c -o hbio.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c ini.c -o ini.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c isfixedvar.c -o isfixedvar.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_Hash.c -o lp_Hash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_LUSOL.c -o lp_LUSOL.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_MDO.c -o lp_MDO.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_MPS.c -o lp_MPS.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_SOS.c -o lp_SOS.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_crash.c -o lp_crash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_lib.c -o lp_lib.o
+lp_lib.c:1246:26: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+ 1246 |     if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */) {
+      |         ~~~~~~~~~~~~~~~~~^~~~~~~
+lp_lib.c:1246:26: note: remove extraneous parentheses around the comparison to silence this warning
+ 1246 |     if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */) {
+      |        ~                 ^      ~
+lp_lib.c:1246:26: note: use '=' to turn this equality comparison into an assignment
+ 1246 |     if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */) {
+      |                          ^~
+      |                          =
+lp_lib.c:1252:28: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+ 1252 |       if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */)
+      |           ~~~~~~~~~~~~~~~~~^~~~~~~
+lp_lib.c:1252:28: note: remove extraneous parentheses around the comparison to silence this warning
+ 1252 |       if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */)
+      |          ~                 ^      ~
+lp_lib.c:1252:28: note: use '=' to turn this equality comparison into an assignment
+ 1252 |       if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */)
+      |                            ^~
+      |                            =
+2 warnings generated.
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_matrix.c -o lp_matrix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_mipbb.c -o lp_mipbb.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_params.c -o lp_params.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_presolve.c -o lp_presolve.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_price.c -o lp_price.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_pricePSE.c -o lp_pricePSE.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_report.c -o lp_report.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_rlp.c -o lp_rlp.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_scale.c -o lp_scale.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_simplex.c -o lp_simplex.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_utils.c -o lp_utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_wlp.c -o lp_wlp.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lpslink56.c -o lpslink56.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lusol.c -o lusol.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lusolio.c -o lusolio.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c mmio.c -o mmio.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c myblas.c -o myblas.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sparselib.c -o sparselib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yacc_read.c -o yacc_read.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o lpSolve.so colamd.o commonlib.o hbio.o ini.o init.o isfixedvar.o lp_Hash.o lp_LUSOL.o lp_MDO.o lp_MPS.o lp_SOS.o lp_crash.o lp_lib.o lp_matrix.o lp_mipbb.o lp_params.o lp_presolve.o lp_price.o lp_pricePSE.o lp_report.o lp_rlp.o lp_scale.o lp_simplex.o lp_utils.o lp_wlp.o lpslink56.o lusol.o lusolio.o mmio.o myblas.o sparselib.o yacc_read.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/lpSolve/libs
+
+Compiling ps 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -Wall px.c -o px
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api-common.c -o api-common.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c common.c -o common.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c extra.c -o extra.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c dummy.c -o dummy.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c error-codes.c -o error-codes.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c posix.c -o posix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api-posix.c -o api-posix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c macos.c -o macos.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api-macos.c -o api-macos.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c arch/macos/process_info.c -o arch/macos/process_info.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c arch/macos/disk.c -o arch/macos/disk.o
+arch/macos/disk.c:75:22: warning: variable length array folded to constant array as an extension [-Wgnu-folding-constant]
+   75 |       char disk_name[kMaxDiskNameSize];
+      |                      ^~~~~~~~~~~~~~~~
+1 warning generated.
+clang -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2 -fobjc-exceptions  -c arch/macos/apps.m -o arch/macos/apps.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o ps.so init.o api-common.o common.o extra.o dummy.o error-codes.o cleancall.o posix.o api-posix.o macos.o api-macos.o arch/macos/process_info.o arch/macos/disk.o arch/macos/apps.o -framework AppKit -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/ps
+
+Compiling zip 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -g -O2  miniz.c zip.c unixutils.c tools/cmdzip.c -o tools/cmdzip
+clang -std=gnu23 -g -O2  miniz.c zip.c unixutils.c tools/cmdunzip.c -o tools/cmdunzip
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c miniz.c -o miniz.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c rzip.c -o rzip.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c zip.c -o zip.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c unixutils.c -o unixutils.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o zip.so init.o miniz.o rzip.o zip.o unixutils.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/zip
+
+Compiling processx 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -Wall tools/px.c -o tools/px
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -I../inst/include -Wall tools/sock.c -o tools/sock
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib supervisor/supervisor.c \
+	      supervisor/utils.c -o supervisor/supervisor
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c base64.c -o base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c client.c -o client.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c errors.c -o errors.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L"/opt/homebrew/Cellar/r/4.6.0/lib/R/lib" -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o client.so base64.o client.o errors.o  \
+		 -L"/opt/homebrew/Cellar/r/4.6.0/lib/R/lib" -lR
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c poll.c -o poll.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c processx-connection.c -o processx-connection.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c processx-vector.c -o processx-vector.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c create-time.c -o create-time.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/childlist.c -o unix/childlist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/connection.c -o unix/connection.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/processx.c -o unix/processx.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/sigchld.c -o unix/sigchld.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/utils.c -o unix/utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/named_pipe.c -o unix/named_pipe.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o processx.so init.o poll.o errors.o processx-connection.o processx-vector.o create-time.o base64.o unix/childlist.o unix/connection.o unix/processx.o unix/sigchld.o unix/utils.o unix/named_pipe.o cleancall.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/processx
+
+Compiling callr 
+
+Compiling desc 
+
+Compiling pkgbuild 
+
+Compiling pkgcache 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c errors.c -o errors.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lib.c -o lib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c winfiles.c -o winfiles.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o pkgcache.so errors.o init.o lib.o winfiles.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/pkgcache/libs
+
+Compiling pkgsearch 
+
+Compiling yaml 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api.c -o api.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c dumper.c -o dumper.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c emitter.c -o emitter.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c implicit.c -o implicit.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c loader.c -o loader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c parser.c -o parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c r_emit.c -o r_emit.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c r_ext.c -o r_ext.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c r_parse.c -o r_parse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c reader.c -o reader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c scanner.c -o scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c writer.c -o writer.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o yaml.so api.o dumper.o emitter.o implicit.o loader.o parser.o r_emit.o r_ext.o r_parse.o reader.o scanner.o writer.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/yaml/libs
+
+Compiling pkgdepends 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/lib/src/lib.c -o tree-sitter/lib/src/lib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/r/parser.c -o tree-sitter/r/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/r/scanner.c -o tree-sitter/r/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown/parser.c -o tree-sitter/markdown/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown/scanner.c -o tree-sitter/markdown/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown-inline/parser.c -o tree-sitter/markdown-inline/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown-inline/scanner.c -o tree-sitter/markdown-inline/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/yaml/parser.c -o tree-sitter/yaml/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/yaml/scanner.c -o tree-sitter/yaml/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/api.c -o yaml/api.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/dumper.c -o yaml/dumper.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/emitter.c -o yaml/emitter.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/loader.c -o yaml/loader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/parser.c -o yaml/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/reader.c -o yaml/reader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/scanner.c -o yaml/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/writer.c -o yaml/writer.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter.c -o tree-sitter.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml.c -o yaml.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o pkgdepends.so tree-sitter/lib/src/lib.o tree-sitter/r/parser.o tree-sitter/r/scanner.o tree-sitter/markdown/parser.o tree-sitter/markdown/scanner.o tree-sitter/markdown-inline/parser.o tree-sitter/markdown-inline/scanner.o tree-sitter/yaml/parser.o tree-sitter/yaml/scanner.o yaml/api.o yaml/dumper.o yaml/emitter.o yaml/loader.o yaml/parser.o yaml/reader.o yaml/scanner.o yaml/writer.o init.o cleancall.o tree-sitter.o yaml.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/pkgdepends/libs
+
+Compiling keyring 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c aes.c -o aes.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c aesce.c -o aesce.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c aesni.c -o aesni.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c base64.c -o base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c blake2b-compress-ref.c -o blake2b-compress-ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c blake2b-ref.c -o blake2b-ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c core_hsalsa20_ref2.c -o core_hsalsa20_ref2.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c core_salsa_ref.c -o core_salsa_ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c crypto_generichash.c -o crypto_generichash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c crypto_secretbox_easy.c -o crypto_secretbox_easy.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c generichash_blake2b.c -o generichash_blake2b.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c keyring_macos.c -o keyring_macos.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c keyring_secret_service.c -o keyring_secret_service.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c keyring_wincred.c -o keyring_wincred.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c onetimeauth_poly1305.c -o onetimeauth_poly1305.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c padlock.c -o padlock.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c platform_util.c -o platform_util.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c poly1305_donna.c -o poly1305_donna.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c raes.c -o raes.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c randombytes_sysrandom.c -o randombytes_sysrandom.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c salsa20_ref.c -o salsa20_ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sha256.c -o sha256.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sodium-utils.c -o sodium-utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sodium.c -o sodium.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c stream_salsa20.c -o stream_salsa20.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c verify.c -o verify.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c win-path.c -o win-path.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o keyring.so aes.o aesce.o aesni.o base64.o blake2b-compress-ref.o blake2b-ref.o core_hsalsa20_ref2.o core_salsa_ref.o crypto_generichash.o crypto_secretbox_easy.o generichash_blake2b.o init.o keyring_macos.o keyring_secret_service.o keyring_wincred.o onetimeauth_poly1305.o padlock.o platform_util.o poly1305_donna.o raes.o randombytes_sysrandom.o salsa20_ref.o sha256.o sodium-utils.o sodium.o stream_salsa20.o verify.o win-path.o -framework Security -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/keyring/libs
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (pak)
+
+The downloaded source packages are in
+	‘/private/var/folders/9p/rp8dwhl528g0q2tl9d7sfhmr0000gn/T/RtmpXAeOU0/downloaded_packages’
+> 
+[INFO] [5/12] Installing data tools...
+[INFO] duckdb already installed
+[INFO] sqlite already installed
+[INFO] xsv already installed
+[INFO] jq already installed
+[INFO] yq already installed
+[INFO] [6/12] Installing database clients and HTTP tools...
+[INFO] curl already installed
+[INFO] wget already installed
+[INFO] xh already installed
+[INFO] httpie already installed
+[INFO] [7/12] Installing cloud and Git tooling...
+[INFO] Installing awscli...
+✔︎ JSON API cask.jws.json
+✔︎ JSON API formula.jws.json
+==> Fetching downloads for: awscli
+✔︎ Bottle Manifest awscli (2.34.47)
+✔︎ Bottle awscli (2.34.47)
+==> Pouring awscli--2.34.47.arm64_tahoe.bottle.tar.gz
+==> Caveats
+The "examples" directory has been installed to:
+  /opt/homebrew/share/awscli/examples
+==> Summary
+🍺  /opt/homebrew/Cellar/awscli/2.34.47: 14,578 files, 156.9MB
+==> Running `brew cleanup awscli`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Caveats
+zsh completions and functions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+[INFO] Installing terraform...
+Warning: No available formula with the name "terraform". Did you mean terraformer or terraform-ls?
+==> Searching for similarly named formulae and casks...
+==> Formulae
+cf-terraforming
+iam-policy-json-to-terraform
+terraform-cleaner
+terraform-docs
+terraform-graph-beautifier
+terraform-iam-policy-validator
+terraform-inventory
+terraform-local
+terraform-ls
+terraform-lsp
+terraform-mcp-server
+terraform-module-versions
+terraform-provider-libvirt
+terraform_landscape
+terraformer
+
+To install cf-terraforming, run:
+  brew install cf-terraforming
+
+==> Casks
+termora
+
+To install termora, run:
+  brew install --cask termora

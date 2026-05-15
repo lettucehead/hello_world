@@ -1,0 +1,1656 @@
+TODO: integrate:
+pbpaste > ~/hello_world/logs/bootstrap_initial.log
+
+Last login: Fri May 15 10:23:43 on console
+pro_nurse@Charlies-MacBook-Air ~ % curl -sL https://raw.githubusercontent.com/lettucehead/hello_world/main/bootstrap-github.sh | bash
+============================================================
+BOOTSTRAP GITHUB - Fri May 15 10:41:04 EDT 2026
+============================================================
+
+[1/4] Checking git...
+✓ git installed
+
+[2/4] Checking SSH key...
+Generating public/private ed25519 key pair.
+Created directory '/Users/pro_nurse/.ssh'.
+Your identification has been saved in /Users/pro_nurse/.ssh/id_ed25519
+Your public key has been saved in /Users/pro_nurse/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:xQGCvDBLsLmmyJb3UTg3hVDlP0apBM5IjPJ8Et1Hvq8 
+The key's randomart image is:
++--[ED25519 256]--+
+|.. .+++o++.      |
+| ++o+o=o=o ..    |
+|o.++.o +.=oo     |
+| ..+... o.=      |
+|..  oo +So +     |
+|= .   + . o .    |
+|o+ . .     .     |
+|. . . .   .      |
+|     .   E       |
++----[SHA256]-----+
+
+============================================================
+ADD THIS KEY TO GITHUB
+============================================================
+
+1. Go to: https://github.com/settings/keys
+2. Click 'New SSH key'
+3. Paste this key:
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGLh9BAc9iHrjv5tHLz9Tu6kswehSz2244LpT1GgeRxd 
+
+============================================================
+
+
+[3/4] Checking git identity...
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+
+[4/4] Cloning repository...
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+bash: line 70: cd: /Users/pro_nurse/hello_world: No such file or directory
+
+============================================================
+SETUP COMPLETE
+============================================================
+
+Repository cloned to: /Users/pro_nurse/hello_world
+
+Available scripts:
+
+Next steps:
+  cd /Users/pro_nurse/hello_world
+  ./github-setup.sh
+
+pro_nurse@Charlies-MacBook-Air ~ %   cd /Users/pro_nurse/hello_world
+  ./github-setup.sh
+cd: no such file or directory: /Users/pro_nurse/hello_world
+zsh: no such file or directory: ./github-setup.sh
+pro_nurse@Charlies-MacBook-Air ~ % ls
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		Public
+pro_nurse@Charlies-MacBook-Air ~ % ls Downloads 
+pro_nurse@Charlies-MacBook-Air ~ % open .
+pro_nurse@Charlies-MacBook-Air ~ % ls -a
+.			.DS_Store		.zsh_sessions		Downloads		Music
+..			.ssh			Desktop			Library			Pictures
+.CFUserTextEncoding	.Trash			Documents		Movies			Public
+pro_nurse@Charlies-MacBook-Air ~ % >....                                                                                
+    fi
+    cd "$CLONE_DIR" 2>/dev/null || true
+fi
+
+chmod +x "$CLONE_DIR"/*.sh 2>/dev/null
+
+echo ""
+echo "============================================================"
+echo "SETUP COMPLETE"
+echo "============================================================"
+echo ""
+echo "Repository: $CLONE_DIR"
+echo ""
+if [ -d "$CLONE_DIR" ]; then
+    echo "Available scripts:"
+    ls -1 "$CLONE_DIR"/*.sh 2>/dev/null | xargs -n1 basename | sed 's/^/  .\//'
+fi
+echo ""
+echo "Next steps:"
+echo "  cd $CLONE_DIR"
+echo "  ./github-setup.sh"
+echo ""
+EOF
+
+chmod +x bootstrap-github.sh
+
+git add bootstrap-github.sh
+git commit -m "Fix bootstrap: handle Xcode tools and non-interactive mode"
+git push origin main
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+pro_nurse@Charlies-MacBook-Air ~ % >....                                                                                
+echo "============================================================"
+echo ""
+echo "Repository: $CLONE_DIR"
+echo ""                                                                   
+
+if [ -d "$CLONE_DIR" ]; then                                          
+    echo "Available scripts:"
+    ls -1 "$CLONE_DIR"/*.sh 2>/dev/null | xargs -n1 basename | sed 's/^/  .\//'                             
+    echo ""                             
+fi                                                                    
+
+echo "Next steps:"                                                                                          
+echo "  cd $CLONE_DIR"                  
+echo "  ./github-setup.sh"                                            
+echo ""
+
+if [ "$OS" = "macos" ]; then            
+    echo "SSH access:"            
+    echo "  Local: $(whoami)@$(ipconfig getifaddr en0 2>/dev/null || echo 'unknown')"
+    echo "  Tailscale: $(whoami)@$(tailscale ip -4 2>/dev/null || echo 'run Tailscale app')"
+    echo ""
+fi
+EOF
+
+chmod +x bootstrap-github.sh
+
+git add bootstrap-github.sh
+git commit -m "Add comprehensive bootstrap with Xcode, SSH, and git setup"
+git push origin main
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+zsh: command not found: xcode-select:
+Password:
+xcode-select: error: invalid developer directory 'path/to/Xcode.app'
+zsh: command not found: If
+zsh: command not found: See
+zsh: command not found: xcode-select:
+xcode-select: error: invalid developer directory 'path/to/Xcode.app'
+zsh: command not found: If
+zsh: command not found: See
+zsh: command not found: xcode-select:
+xcode-select: error: invalid developer directory 'path/to/Xcode.app'
+zsh: command not found: If
+zsh: command not found: See
+zsh: command not found: pro_nurse@Charlies-MacBook-Air
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+xcode-select: note: No developer tools were found, requesting install.
+If developer tools are located at a non-default location on disk, use `sudo xcode-select --switch path/to/Xcode.app` to specify the Xcode that you wish to use for command line developer tools, and cancel the installation dialog.
+See `man xcode-select` for more details.
+pro_nurse@Charlies-MacBook-Air ~ % xcode-select --install 2>/dev/null; until xcode-select -p &>/dev/null; do echo "Waiting for Xcode CLI tools..."; sleep 10; done; echo "Done!"; curl -sL https://raw.githubusercontent.com/lettucehead/hello_world/main/bootstrap-github.sh | bash
+dquote> 
+pro_nurse@Charlies-MacBook-Air ~ % ls
+bootstrap-github.sh	Documents		Library			Music			Public
+Desktop			Downloads		Movies			Pictures
+pro_nurse@Charlies-MacBook-Air ~ % >....                                                                                
+    ms-azuretools.vscode-docker redhat.vscode-yaml hashicorp.terraform
+    golang.go julialang.language-julia sumneko.lua
+    GitHub.copilot GitHub.copilot-chat
+)
+for ext in "${EXTENSIONS[@]}"; do
+    if command_exists code; then
+        run "code --install-extension \"$ext\" --force 2>/dev/null || true"
+    fi
+done
+
+info "Adding shell configuration..."
+append_if_missing ~/.zshrc "# hello_world bootstrap" $'\n# hello_world bootstrap\neval "$(/opt/homebrew/bin/brew shellenv)"\neval "$(zoxide init zsh)"\neval "$(direnv hook zsh)"\nalias ls=\'eza\'\nalias ll=\'eza -la\'\nalias cat=\'bat --style=plain\'\nalias grep=\'rg\'\nalias find=\'fd\'\nalias du=\'duf\'\nalias ps=\'procs\'\nalias rm=\'trash\'\nalias cd=\'z\'\nalias lg=\'lazygit\'\nalias gs=\'git status\'\nalias ga=\'git add\'\nalias gc=\'git commit\'\nalias gp=\'git push\'\nalias csv=\'xsv\'\nalias duck=\'duckdb\'\nalias http=\'xh\'\nalias pg=\'pgcli\'\nalias my=\'mycli\'\nalias lite=\'litecli\'\nalias tf=\'terraform\'\nalias cleanup=\'brew cleanup && npm cache clean --force && uv cache clean\'\n'
+
+info "Bootstrap complete. Run 'source ~/.zshrc' or restart your terminal to apply shell changes."
+
+echo ""
+echo "=== Done ==="
+echo "Local SSH: $(whoami)@$(ipconfig getifaddr en0 2>/dev/null || echo 'unknown')"
+echo "Tailscale SSH: $(whoami)@$(tailscale ip -4 2>/dev/null || echo 'approve device')"
+echo ""
+echo "GitHub Copilot: Sign in via VS Code (Ctrl+Shift+P → GitHub Copilot: Sign In)"
+EOF
+
+chmod +x bootstrap-macos.sh
+pro_nurse@Charlies-MacBook-Air ~ % ls                   
+bootstrap-github.sh	Desktop			Downloads		Movies			Pictures
+bootstrap-macos.sh	Documents		Library			Music			Public
+pro_nurse@Charlies-MacBook-Air ~ % ./bootstrap-macos.sh 
+[INFO] Checking Xcode CLI tools...
+[INFO] Installing Xcode CLI tools...
+
+============================================================
+WAITING FOR XCODE CLI TOOLS
+============================================================
+
+1. Click 'Install' on the popup
+2. Wait for installation to complete (5-10 minutes)
+
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+Still installing... (checking every 30 seconds)
+
+[INFO] Xcode CLI tools installed!
+[INFO] Installing Homebrew...
+bash: -c: line 267: syntax error near unexpected token `('
+bash: -c: line 267: `    abort "Need sudo access on macOS (e.g. the user ${USER} needs to be an Administrator)!"'
+pro_nurse@Charlies-MacBook-Air ~ % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+==> Checking for `sudo` access (which may request your password)...
+Password:
+==> This script will install:
+/opt/homebrew/bin/brew
+/opt/homebrew/share/doc/homebrew
+/opt/homebrew/share/man/man1/brew.1
+/opt/homebrew/share/zsh/site-functions/_brew
+/opt/homebrew/etc/bash_completion.d/brew
+/opt/homebrew
+/etc/paths.d/homebrew
+==> The following new directories will be created:
+/opt/homebrew/bin
+/opt/homebrew/etc
+/opt/homebrew/include
+/opt/homebrew/lib
+/opt/homebrew/sbin
+/opt/homebrew/share
+/opt/homebrew/var
+/opt/homebrew/opt
+/opt/homebrew/share/zsh
+/opt/homebrew/share/zsh/site-functions
+/opt/homebrew/var/homebrew
+/opt/homebrew/var/homebrew/linked
+/opt/homebrew/Cellar
+/opt/homebrew/Caskroom
+/opt/homebrew/Frameworks
+
+Press RETURN/ENTER to continue or any other key to abort:
+==> /usr/bin/sudo /usr/bin/install -d -o root -g wheel -m 0755 /opt/homebrew
+==> /usr/bin/sudo /bin/mkdir -p /opt/homebrew/bin /opt/homebrew/etc /opt/homebrew/include /opt/homebrew/lib /opt/homebrew/sbin /opt/homebrew/share /opt/homebrew/var /opt/homebrew/opt /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew /opt/homebrew/var/homebrew/linked /opt/homebrew/Cellar /opt/homebrew/Caskroom /opt/homebrew/Frameworks
+==> /usr/bin/sudo /bin/chmod ug=rwx /opt/homebrew/bin /opt/homebrew/etc /opt/homebrew/include /opt/homebrew/lib /opt/homebrew/sbin /opt/homebrew/share /opt/homebrew/var /opt/homebrew/opt /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew /opt/homebrew/var/homebrew/linked /opt/homebrew/Cellar /opt/homebrew/Caskroom /opt/homebrew/Frameworks
+==> /usr/bin/sudo /bin/chmod go-w /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions
+==> /usr/bin/sudo /usr/sbin/chown pro_nurse /opt/homebrew/bin /opt/homebrew/etc /opt/homebrew/include /opt/homebrew/lib /opt/homebrew/sbin /opt/homebrew/share /opt/homebrew/var /opt/homebrew/opt /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew /opt/homebrew/var/homebrew/linked /opt/homebrew/Cellar /opt/homebrew/Caskroom /opt/homebrew/Frameworks
+==> /usr/bin/sudo /usr/bin/chgrp admin /opt/homebrew/bin /opt/homebrew/etc /opt/homebrew/include /opt/homebrew/lib /opt/homebrew/sbin /opt/homebrew/share /opt/homebrew/var /opt/homebrew/opt /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew /opt/homebrew/var/homebrew/linked /opt/homebrew/Cellar /opt/homebrew/Caskroom /opt/homebrew/Frameworks
+==> /usr/bin/sudo /usr/sbin/chown -R pro_nurse:admin /opt/homebrew
+==> Downloading and installing Homebrew...
+remote: Enumerating objects: 332474, done.
+remote: Counting objects: 100% (17431/17431), done.
+remote: Compressing objects: 100% (1155/1155), done.
+remote: Total 332474 (delta 16822), reused 16322 (delta 16276), pack-reused 315043 (from 2)
+remote: Enumerating objects: 55, done.
+remote: Counting objects: 100% (34/34), done.
+remote: Total 55 (delta 34), reused 34 (delta 34), pack-reused 21 (from 1)
+==> /usr/bin/sudo /bin/mkdir -p /etc/paths.d
+==> /usr/bin/sudo tee /etc/paths.d/homebrew
+/opt/homebrew/bin
+==> /usr/bin/sudo /usr/sbin/chown root:wheel /etc/paths.d/homebrew
+==> /usr/bin/sudo /bin/chmod a+r /etc/paths.d/homebrew
+==> Updating Homebrew...
+==> Downloading https://ghcr.io/v2/homebrew/core/portable-ruby/blobs/sha256:8ad98d9cf15477d1a43f4012cfd5eff5c271398bca1e2724b55bd4944a0bb1d4
+################################################################################################################# 100.0%
+==> Pouring portable-ruby-4.0.3.arm64_big_sur.bottle.tar.gz
+==> Installation successful!
+
+==> Homebrew has enabled anonymous aggregate formulae and cask analytics.
+Read the analytics documentation (and how to opt-out) here:
+  https://docs.brew.sh/Analytics
+No analytics data has been sent yet (nor will any be during this install run).
+
+==> Homebrew is run entirely by unpaid volunteers. Please consider donating:
+  https://github.com/Homebrew/brew#donations
+
+==> Next steps:
+- Run these commands in your terminal to add Homebrew to your PATH:
+    echo >> /Users/pro_nurse/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv zsh)"' >> /Users/pro_nurse/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+- Run brew help to get started
+- Further documentation:
+    https://docs.brew.sh
+
+pro_nurse@Charlies-MacBook-Air ~ % >....                                                                                
+
+# GitHub CLI auth
+command_exists gh && gh auth login -p ssh -h github.com || true
+
+# Shell config
+append_if_missing ~/.zshrc "# bootstrap" $'\n# bootstrap\neval "$(zoxide init zsh)"\neval "$(direnv hook zsh)"\nalias ls="eza"\nalias ll="eza -la"\nalias cat="bat --style=plain"\nalias lg="lazygit"\n'
+
+echo ""
+echo "============================================================"
+echo "BOOTSTRAP COMPLETE"
+echo "============================================================"
+echo ""
+echo "Run: source ~/.zshrc"
+echo ""
+echo "Local SSH:     $(whoami)@$(ipconfig getifaddr en0 2>/dev/null || echo 'unknown')"
+echo "Tailscale SSH: $(whoami)@$(tailscale ip -4 2>/dev/null || echo 'configure Tailscale')"
+echo ""
+EOF
+
+chmod +x bootstrap-macos.sh
+
+# Configure git and push
+git config user.name "lettucehead"
+git config user.email "your-email@example.com"
+
+git add bootstrap-macos.sh
+git commit -m "Fix bootstrap: add Cmd+Tab hint, fix Homebrew install"
+git push origin main
+zsh: command not found: #
+zsh: command not found: #
+==> Fetching downloads for: git
+✔︎ Bottle Manifest git (2.54.0)                                                               Downloaded   21.3KB/ 21.3KB
+✔︎ Bottle Manifest pcre2 (10.47_1)                                                            Downloaded   11.7KB/ 11.7KB
+✔︎ Bottle Manifest libunistring (1.4.2)                                                       Downloaded    7.3KB/  7.3KB
+✔︎ Bottle Manifest gettext (1.0)                                                              Downloaded   13.7KB/ 13.7KB
+✔︎ Bottle libunistring (1.4.2)                                                                Downloaded    1.9MB/  1.9MB
+✔︎ Bottle pcre2 (10.47_1)                                                                     Downloaded    2.4MB/  2.4MB
+✔︎ Bottle gettext (1.0)                                                                       Downloaded   10.2MB/ 10.2MB
+✔︎ Bottle git (2.54.0)                                                                        Downloaded   22.8MB/ 22.8MB
+==> Installing dependencies for git: pcre2, libunistring and gettext
+==> Installing git dependency: pcre2
+==> Pouring pcre2--10.47_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/pcre2/10.47_1: 244 files, 7.3MB
+==> Installing git dependency: libunistring
+==> Pouring libunistring--1.4.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libunistring/1.4.2: 59 files, 5.8MB
+==> Installing git dependency: gettext
+==> Pouring gettext--1.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/gettext/1.0: 2,499 files, 35.3MB
+==> Installing git
+==> Pouring git--2.54.0.arm64_tahoe.bottle.tar.gz
+==> Caveats
+The Tcl/Tk GUIs (e.g. gitk, git-gui) are now in the `git-gui` formula.
+Subversion interoperability (git-svn) is now in the `git-svn` formula.
+==> Summary
+🍺  /opt/homebrew/Cellar/git/2.54.0: 1,719 files, 62.7MB
+==> Running `brew cleanup git`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Caveats
+zsh completions and functions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+==> git
+The Tcl/Tk GUIs (e.g. gitk, git-gui) are now in the `git-gui` formula.
+Subversion interoperability (git-svn) is now in the `git-svn` formula.
+zsh: command not found: #
+Cloning into '/Users/pro_nurse/hello_world'...
+remote: Enumerating objects: 25, done.
+remote: Counting objects: 100% (25/25), done.
+remote: Compressing objects: 100% (18/18), done.
+remote: Total 25 (delta 7), reused 23 (delta 5), pack-reused 0 (from 0)
+Receiving objects: 100% (25/25), 11.44 KiB | 1.27 MiB/s, done.
+Resolving deltas: 100% (7/7), done.
+zsh: command not found: #
+zsh: command not found: #
+[main 7980a0b] Fix bootstrap: add Cmd+Tab hint, fix Homebrew install
+ 1 file changed, 167 insertions(+), 215 deletions(-)
+ mode change 100644 => 100755 bootstrap-macos.sh
+Username for 'https://github.com': lettucehead
+Password for 'https://lettucehead@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/lettucehead/hello_world.git/'
+pro_nurse@Charlies-MacBook-Air hello_world % git remote set-url origin git@github.com:lettucehead/hello_world.git
+git push origin main
+The authenticity of host 'github.com (140.82.114.3)' can't be established.
+ED25519 key fingerprint is: SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 2.66 KiB | 2.66 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:lettucehead/hello_world.git
+   62f730a..7980a0b  main -> main
+pro_nurse@Charlies-MacBook-Air hello_world % cd ~/hello_world
+./bootstrap-macos.sh
+============================================================
+macOS FRESH INSTALL BOOTSTRAP - Fri May 15 11:04:26 EDT 2026
+============================================================
+
+[INFO] [1/12] Checking Xcode CLI tools...
+[INFO] Xcode CLI tools already installed
+[INFO] [2/12] Checking Homebrew...
+[INFO] Homebrew already installed
+[INFO] [3/12] Installing languages...
+[INFO] Installing node...
+==> Fetching downloads for: node
+✔︎ Bottle Manifest node (26.0.0)                                                              Downloaded   33.4KB/ 33.4KB
+✔︎ Bottle Manifest fmt (12.1.0)                                                               Downloaded    7.3KB/  7.3KB
+✔︎ Bottle Manifest ada-url (3.4.4)                                                            Downloaded    8.7KB/  8.7KB
+✔︎ Bottle Manifest brotli (1.2.0)                                                             Downloaded    8.0KB/  8.0KB
+✔︎ Bottle Manifest c-ares (1.34.6)                                                            Downloaded    7.5KB/  7.5KB
+✔︎ Bottle Manifest hdrhistogram_c (0.11.9)                                                    Downloaded    7.8KB/  7.8KB
+✔︎ Bottle Manifest icu4c@78 (78.3)                                                            Downloaded    9.7KB/  9.7KB
+✔︎ Bottle Manifest libnghttp2 (1.69.0)                                                        Downloaded    7.3KB/  7.3KB
+✔︎ Bottle hdrhistogram_c (0.11.9)                                                             Downloaded   43.6KB/ 43.6KB
+✔︎ Bottle Manifest openssl@3 (3.6.2)                                                          Downloaded   12.0KB/ 12.0KB
+✔︎ Bottle fmt (12.1.0)                                                                        Downloaded  282.9KB/282.9KB
+✔︎ Bottle Manifest ca-certificates (2026-05-14)                                               Downloaded    1.7KB/  1.7KB
+✔︎ Bottle Manifest libngtcp2 (1.22.1)                                                         Downloaded    9.7KB/  9.7KB
+✔︎ Bottle Manifest libnghttp3 (1.15.0)                                                        Downloaded    7.3KB/  7.3KB
+✔︎ Bottle c-ares (1.34.6)                                                                     Downloaded  304.0KB/304.0KB
+✔︎ Bottle ca-certificates (2026-05-14)                                                        Downloaded  112.1KB/112.1KB
+✔︎ Bottle Manifest libuv (1.52.1)                                                             Downloaded    7.5KB/  7.5KB
+✔︎ Bottle Manifest llhttp (9.4.1)                                                             Downloaded    7.2KB/  7.2KB
+✔︎ Bottle ada-url (3.4.4)                                                                     Downloaded  345.6KB/345.6KB
+✔︎ Bottle libnghttp2 (1.69.0)                                                                 Downloaded  231.4KB/231.4KB
+✔︎ Bottle libnghttp3 (1.15.0)                                                                 Downloaded  188.8KB/188.8KB
+✔︎ Bottle Manifest simdutf (9.0.0)                                                            Downloaded    9.0KB/  9.0KB
+✔︎ Bottle brotli (1.2.0)                                                                      Downloaded  793.5KB/793.5KB
+✔︎ Bottle llhttp (9.4.1)                                                                      Downloaded   38.2KB/ 38.2KB
+✔︎ Bottle Manifest merve (1.2.2_1)                                                            Downloaded    9.4KB/  9.4KB
+✔︎ Bottle libngtcp2 (1.22.1)                                                                  Downloaded  393.2KB/393.2KB
+✔︎ Bottle libuv (1.52.1)                                                                      Downloaded  375.7KB/375.7KB
+✔︎ Bottle Manifest nbytes (0.1.4)                                                             Downloaded    7.3KB/  7.3KB
+✔︎ Bottle Manifest simdjson (4.6.4)                                                           Downloaded    7.3KB/  7.3KB
+✔︎ Bottle Manifest readline (8.3.3)                                                           Downloaded   10.0KB/ 10.0KB
+✔︎ Bottle simdutf (9.0.0)                                                                     Downloaded  391.1KB/391.1KB
+✔︎ Bottle Manifest sqlite (3.53.1)                                                            Downloaded   11.8KB/ 11.8KB
+✔︎ Bottle merve (1.2.2_1)                                                                     Downloaded   33.0KB/ 33.0KB
+✔︎ Bottle nbytes (0.1.4)                                                                      Downloaded   13.3KB/ 13.3KB
+✔︎ Bottle Manifest uvwasi (0.0.23)                                                            Downloaded    8.3KB/  8.3KB
+✔︎ Bottle Manifest lz4 (1.10.0)                                                               Downloaded   13.8KB/ 13.8KB
+✔︎ Bottle Manifest xz (5.8.3)                                                                 Downloaded   11.8KB/ 11.8KB
+✔︎ Bottle Manifest zstd (1.5.7_1)                                                             Downloaded   13.2KB/ 13.2KB
+✔︎ Bottle uvwasi (0.0.23)                                                                     Downloaded   70.0KB/ 70.0KB
+✔︎ Bottle readline (8.3.3)                                                                    Downloaded  757.9KB/757.9KB
+✔︎ Bottle lz4 (1.10.0)                                                                        Downloaded  279.7KB/279.7KB
+✔︎ Bottle xz (5.8.3)                                                                          Downloaded  770.8KB/770.8KB
+✔︎ Bottle zstd (1.5.7_1)                                                                      Downloaded  793.6KB/793.6KB
+✔︎ Bottle simdjson (4.6.4)                                                                    Downloaded    1.4MB/  1.4MB
+✔︎ Bottle sqlite (3.53.1)                                                                     Downloaded    2.4MB/  2.4MB
+✔︎ Bottle icu4c@78 (78.3)                                                                     Downloaded   31.8MB/ 31.8MB
+✔︎ Bottle openssl@3 (3.6.2)                                                                   Downloaded   10.9MB/ 10.9MB
+✔︎ Bottle node (26.0.0)                                                                       Downloaded   19.0MB/ 19.0MB
+==> Installing dependencies for node: fmt, ada-url, brotli, c-ares, hdrhistogram_c, icu4c@78, libnghttp2, libnghttp3, ca-certificates, openssl@3, libngtcp2, libuv, llhttp, simdutf, merve, nbytes, simdjson, readline, sqlite, uvwasi, lz4, xz and zstd
+==> Installing node dependency: fmt
+==> Pouring fmt--12.1.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/fmt/12.1.0: 29 files, 1MB
+==> Installing node dependency: ada-url
+==> Pouring ada-url--3.4.4.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/ada-url/3.4.4: 55 files, 1.3MB
+==> Installing node dependency: brotli
+==> Pouring brotli--1.2.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/brotli/1.2.0: 33 files, 1.9MB
+==> Installing node dependency: c-ares
+==> Pouring c-ares--1.34.6.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/c-ares/1.34.6: 176 files, 1MB
+==> Installing node dependency: hdrhistogram_c
+==> Pouring hdrhistogram_c--0.11.9.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/hdrhistogram_c/0.11.9: 22 files, 172.7KB
+==> Installing node dependency: icu4c@78
+==> Pouring icu4c@78--78.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/icu4c@78/78.3: 279 files, 87.7MB
+==> Installing node dependency: libnghttp2
+==> Pouring libnghttp2--1.69.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libnghttp2/1.69.0: 14 files, 848.6KB
+==> Installing node dependency: libnghttp3
+==> Pouring libnghttp3--1.15.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libnghttp3/1.15.0: 20 files, 603.6KB
+==> Installing node dependency: ca-certificates
+==> Pouring ca-certificates--2026-05-14.all.bottle.tar.gz
+==> Regenerating CA certificate bundle from keychain, this may take a while...
+🍺  /opt/homebrew/Cellar/ca-certificates/2026-05-14: 4 files, 200.6KB
+==> Installing node dependency: openssl@3
+==> Pouring openssl@3--3.6.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openssl@3/3.6.2: 7,627 files, 37.6MB
+==> Installing node dependency: libngtcp2
+==> Pouring libngtcp2--1.22.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libngtcp2/1.22.1: 21 files, 1.3MB
+==> Installing node dependency: libuv
+==> Pouring libuv--1.52.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libuv/1.52.1: 35 files, 1.3MB
+==> Installing node dependency: llhttp
+==> Pouring llhttp--9.4.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/llhttp/9.4.1: 15 files, 165KB
+==> Installing node dependency: simdutf
+==> Pouring simdutf--9.0.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/simdutf/9.0.0: 65 files, 2MB
+==> Installing node dependency: merve
+==> Pouring merve--1.2.2_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/merve/1.2.2_1: 19 files, 151.9KB
+==> Installing node dependency: nbytes
+==> Pouring nbytes--0.1.4.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/nbytes/0.1.4: 9 files, 90.4KB
+==> Installing node dependency: simdjson
+==> Pouring simdjson--4.6.4.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/simdjson/4.6.4: 19 files, 8.0MB
+==> Installing node dependency: readline
+==> Pouring readline--8.3.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/readline/8.3.3: 56 files, 2.7MB
+==> Installing node dependency: sqlite
+==> Pouring sqlite--3.53.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/sqlite/3.53.1: 13 files, 5.3MB
+==> Installing node dependency: uvwasi
+==> Pouring uvwasi--0.0.23.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/uvwasi/0.0.23: 15 files, 289KB
+==> Installing node dependency: lz4
+==> Pouring lz4--1.10.0.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/lz4/1.10.0: 24 files, 768.9KB
+==> Installing node dependency: xz
+==> Pouring xz--5.8.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xz/5.8.3: 96 files, 2.7MB
+==> Installing node dependency: zstd
+==> Pouring zstd--1.5.7_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/zstd/1.5.7_1: 32 files, 2.3MB
+==> Installing node
+==> Pouring node--26.0.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/node/26.0.0: 1,889 files, 82.4MB
+==> Running `brew cleanup node`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] Installing python...
+==> Fetching downloads for: python@3.14
+✔︎ Bottle Manifest python@3.14 (3.14.5)                                                       Downloaded   31.1KB/ 31.1KB
+✔︎ Bottle Manifest mpdecimal (4.0.1)                                                          Downloaded   11.9KB/ 11.9KB
+✔︎ Bottle mpdecimal (4.0.1)                                                                   Downloaded  186.2KB/186.2KB
+✔︎ Bottle python@3.14 (3.14.5)                                                                Downloaded   19.2MB/ 19.2MB
+==> Installing python@3.14 dependency: mpdecimal
+==> Pouring mpdecimal--4.0.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mpdecimal/4.0.1: 22 files, 660.9KB
+==> Pouring python@3.14--3.14.5.arm64_tahoe.bottle.tar.gz
+==> Caveats
+Python is installed as
+  /opt/homebrew/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, are installed into
+  /opt/homebrew/opt/python@3.14/libexec/bin
+
+`idle3.14` requires tkinter, which is available separately:
+  brew install python-tk@3.14
+
+See: https://docs.brew.sh/Homebrew-and-Python
+==> Summary
+🍺  /opt/homebrew/Cellar/python@3.14/3.14.5: 3,745 files, 75.6MB
+==> Running `brew cleanup python@3.14`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Caveats
+==> python@3.14
+Python is installed as
+  /opt/homebrew/bin/python3
+
+Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to
+`python3`, `python3-config`, `pip3` etc., respectively, are installed into
+  /opt/homebrew/opt/python@3.14/libexec/bin
+
+`idle3.14` requires tkinter, which is available separately:
+  brew install python-tk@3.14
+
+See: https://docs.brew.sh/Homebrew-and-Python
+[INFO] Installing r...
+==> Fetching downloads for: r
+✔︎ Bottle Manifest r (4.6.0)                                                                  Downloaded   53.2KB/ 53.2KB
+✔︎ Bottle Manifest libpng (1.6.58)                                                            Downloaded    8.6KB/  8.6KB
+✔︎ Bottle libpng (1.6.58)                                                                     Downloaded  459.8KB/459.8KB
+✔︎ Bottle Manifest freetype (2.14.3)                                                          Downloaded    9.4KB/  9.4KB
+✔︎ Bottle Manifest fontconfig (2.17.1)                                                        Downloaded   17.3KB/ 17.3KB
+✔︎ Bottle Manifest glib (2.88.1)                                                              Downloaded   21.3KB/ 21.3KB
+✔︎ Bottle Manifest xorgproto (2025.1)                                                         Downloaded   13.1KB/ 13.1KB
+✔︎ Bottle Manifest libxau (1.0.12)                                                            Downloaded   10.3KB/ 10.3KB
+✔︎ Bottle libxau (1.0.12)                                                                     Downloaded   33.4KB/ 33.4KB
+✔︎ Bottle Manifest libxdmcp (1.1.5)                                                           Downloaded   12.0KB/ 12.0KB
+✔︎ Bottle libxdmcp (1.1.5)                                                                    Downloaded   36.8KB/ 36.8KB
+✔︎ Bottle Manifest libxcb (1.17.0)                                                            Downloaded   19.2KB/ 19.2KB
+✔︎ Bottle Manifest libxext (1.3.7)                                                            Downloaded   11.5KB/ 11.5KB
+✔︎ Bottle fontconfig (2.17.1)                                                                 Downloaded  400.1KB/400.1KB
+✔︎ Bottle Manifest libx11 (1.8.13)                                                            Downloaded   14.4KB/ 14.4KB
+✔︎ Bottle Manifest libxrender (0.9.12)                                                        Downloaded   14.2KB/ 14.2KB
+✔︎ Bottle Manifest lzo (2.10)                                                                 Downloaded   16.7KB/ 16.7KB
+✔︎ Bottle freetype (2.14.3)                                                                   Downloaded  996.4KB/996.4KB
+✔︎ Bottle libxext (1.3.7)                                                                     Downloaded  109.6KB/109.6KB
+✔︎ Bottle libxrender (0.9.12)                                                                 Downloaded   54.6KB/ 54.6KB
+✔︎ Bottle Manifest pixman (0.46.4)                                                            Downloaded    9.3KB/  9.3KB
+✔︎ Bottle Manifest cairo (1.18.4)                                                             Downloaded   29.8KB/ 29.8KB
+✔︎ Bottle xorgproto (2025.1)                                                                  Downloaded  720.1KB/720.1KB
+✔︎ Bottle Manifest gmp (6.3.0)                                                                Downloaded   13.3KB/ 13.3KB
+✔︎ Bottle Manifest isl (0.27)                                                                 Downloaded   14.5KB/ 14.5KB
+✔︎ Bottle lzo (2.10)                                                                          Downloaded  149.6KB/149.6KB
+✔︎ Bottle Manifest mpfr (4.2.2)                                                               Downloaded   12.7KB/ 12.7KB
+✔︎ Bottle Manifest libmpc (1.4.1)                                                             Downloaded   12.0KB/ 12.0KB
+✔︎ Bottle Manifest gcc (15.2.0_1)                                                             Downloaded   23.5KB/ 23.5KB
+✔︎ Bottle Manifest jpeg-turbo (3.1.4.1)                                                       Downloaded    8.4KB/  8.4KB
+✔︎ Bottle Manifest libomp (22.1.5)                                                            Downloaded   12.4KB/ 12.4KB
+✔︎ Bottle pixman (0.46.4)                                                                     Downloaded  416.2KB/416.2KB
+✔︎ Bottle libmpc (1.4.1)                                                                      Downloaded  156.2KB/156.2KB
+✔︎ Bottle libxcb (1.17.0)                                                                     Downloaded  999.8KB/999.8KB
+✔︎ Bottle jpeg-turbo (3.1.4.1)                                                                Downloaded    1.1MB/  1.1MB
+✔︎ Bottle cairo (1.18.4)                                                                      Downloaded    1.6MB/  1.6MB
+✔︎ Bottle Manifest openblas (0.3.33)                                                          Downloaded   16.7KB/ 16.7KB
+✔︎ Bottle isl (0.27)                                                                          Downloaded    1.7MB/  1.7MB
+✔︎ Bottle libx11 (1.8.13)                                                                     Downloaded    2.3MB/  2.3MB
+✔︎ Bottle gmp (6.3.0)                                                                         Downloaded    1.0MB/  1.0MB
+✔︎ Bottle mpfr (4.2.2)                                                                        Downloaded    1.1MB/  1.1MB
+✔︎ Bottle libomp (22.1.5)                                                                     Downloaded  590.0KB/590.0KB
+✔︎ Bottle libtommath (1.3.0)                                                                  Downloaded  149.1KB/149.1KB
+✔︎ Bottle Manifest libtommath (1.3.0)                                                         Downloaded   10.9KB/ 10.9KB
+✔︎ Bottle Manifest tcl-tk (9.0.3)                                                             Downloaded   14.0KB/ 14.0KB
+✔︎ Bottle glib (2.88.1)                                                                       Downloaded    9.3MB/  9.3MB
+✔︎ Bottle openblas (0.3.33)                                                                   Downloaded   16.8MB/ 16.8MB
+✔︎ Bottle tcl-tk (9.0.3)                                                                      Downloaded   10.1MB/ 10.1MB
+✔︎ Bottle r (4.6.0)                                                                           Downloaded   55.1MB/ 55.1MB
+✔︎ Bottle gcc (15.2.0_1)                                                                      Downloaded  152.3MB/152.3MB
+==> Installing dependencies for r: libpng, freetype, fontconfig, glib, xorgproto, libxau, libxdmcp, libxcb, libx11, libxext, libxrender, lzo, pixman, cairo, gmp, isl, mpfr, libmpc, gcc, jpeg-turbo, libomp, openblas, libtommath and tcl-tk
+==> Installing r dependency: libpng
+==> Pouring libpng--1.6.58.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libpng/1.6.58: 28 files, 1.4MB
+==> Installing r dependency: freetype
+==> Pouring freetype--2.14.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/freetype/2.14.3: 68 files, 2.7MB
+==> Installing r dependency: fontconfig
+==> Pouring fontconfig--2.17.1.arm64_tahoe.bottle.1.tar.gz
+==> Regenerating font cache, this may take a while
+==> /opt/homebrew/Cellar/fontconfig/2.17.1/bin/fc-cache --force --really-force --verbose
+🍺  /opt/homebrew/Cellar/fontconfig/2.17.1: 98 files, 1.6MB
+==> Installing r dependency: glib
+==> Pouring glib--2.88.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/glib/2.88.1: 506 files, 39.9MB
+==> Installing r dependency: xorgproto
+==> Pouring xorgproto--2025.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xorgproto/2025.1: 268 files, 4.1MB
+==> Installing r dependency: libxau
+==> Pouring libxau--1.0.12.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxau/1.0.12: 21 files, 137.4KB
+==> Installing r dependency: libxdmcp
+==> Pouring libxdmcp--1.1.5.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxdmcp/1.1.5: 12 files, 143.0KB
+==> Installing r dependency: libxcb
+==> Pouring libxcb--1.17.0.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/libxcb/1.17.0: 2,498 files, 7.9MB
+==> Installing r dependency: libx11
+==> Pouring libx11--1.8.13.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libx11/1.8.13: 1,043 files, 7.4MB
+==> Installing r dependency: libxext
+==> Pouring libxext--1.3.7.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxext/1.3.7: 88 files, 472.6KB
+==> Installing r dependency: libxrender
+==> Pouring libxrender--0.9.12.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libxrender/0.9.12: 13 files, 230.5KB
+==> Installing r dependency: lzo
+==> Pouring lzo--2.10.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/lzo/2.10: 32 files, 579.8KB
+==> Installing r dependency: pixman
+==> Pouring pixman--0.46.4.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/pixman/0.46.4: 11 files, 1.4MB
+==> Installing r dependency: cairo
+==> Pouring cairo--1.18.4.arm64_tahoe.bottle.2.tar.gz
+🍺  /opt/homebrew/Cellar/cairo/1.18.4: 58 files, 4.7MB
+==> Installing r dependency: gmp
+==> Pouring gmp--6.3.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/gmp/6.3.0: 22 files, 3.4MB
+==> Installing r dependency: isl
+==> Pouring isl--0.27.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/isl/0.27: 74 files, 8.0MB
+==> Installing r dependency: mpfr
+==> Pouring mpfr--4.2.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/mpfr/4.2.2: 31 files, 3.3MB
+==> Installing r dependency: libmpc
+==> Pouring libmpc--1.4.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libmpc/1.4.1: 14 files, 544KB
+==> Installing r dependency: gcc
+==> Pouring gcc--15.2.0_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/gcc/15.2.0_1: 1,602 files, 460.7MB
+==> Installing r dependency: jpeg-turbo
+==> Pouring jpeg-turbo--3.1.4.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/jpeg-turbo/3.1.4.1: 47 files, 3.7MB
+==> Installing r dependency: libomp
+==> Pouring libomp--22.1.5.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libomp/22.1.5: 11 files, 1.8MB
+==> Installing r dependency: openblas
+==> Pouring openblas--0.3.33.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openblas/0.3.33: 29 files, 55.5MB
+==> Installing r dependency: libtommath
+==> Pouring libtommath--1.3.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libtommath/1.3.0: 12 files, 525.5KB
+==> Installing r dependency: tcl-tk
+==> Pouring tcl-tk--9.0.3.arm64_tahoe.bottle.2.tar.gz
+🍺  /opt/homebrew/Cellar/tcl-tk/9.0.3: 3,158 files, 40MB
+==> Installing r
+==> Pouring r--4.6.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/r/4.6.0: 2,524 files, 78.3MB
+==> Running `brew cleanup r`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] Installing julia...
+✔︎ JSON API cask.jws.json                                                                     Downloaded   15.4MB/ 15.4MB
+✔︎ JSON API formula.jws.json                                                                  Downloaded   32.0MB/ 32.0MB
+==> Fetching downloads for: julia
+✔︎ Bottle Manifest julia (1.12.6)                                                             Downloaded   38.2KB/ 38.2KB
+✔︎ Bottle Manifest libssh2 (1.11.1_1)                                                         Downloaded   12.1KB/ 12.1KB
+✔︎ Bottle Manifest curl (8.20.0)                                                              Downloaded   22.3KB/ 22.3KB
+✔︎ Bottle Manifest libblastrampoline (5.15.0)                                                 Downloaded    7.5KB/  7.5KB
+✔︎ Bottle Manifest libgit2 (1.9.3)                                                            Downloaded   13.1KB/ 13.1KB
+✔︎ Bottle Manifest openblas64 (0.3.33)                                                        Downloaded   16.1KB/ 16.1KB
+✔︎ Bottle libssh2 (1.11.1_1)                                                                  Downloaded  422.9KB/422.9KB
+✔︎ Bottle Manifest p7zip (17.06)                                                              Downloaded   10.3KB/ 10.3KB
+✔︎ Bottle Manifest openlibm (0.8.7)                                                           Downloaded    9.6KB/  9.6KB
+✔︎ Bottle Manifest suite-sparse (7.12.2)                                                      Downloaded   20.8KB/ 20.8KB
+✔︎ Bottle Manifest utf8proc (2.11.3)                                                          Downloaded    7.5KB/  7.5KB
+✔︎ Bottle libblastrampoline (5.15.0)                                                          Downloaded  476.1KB/476.1KB
+✔︎ Bottle openlibm (0.8.7)                                                                    Downloaded  167.9KB/167.9KB
+✔︎ Bottle utf8proc (2.11.3)                                                                   Downloaded  107.2KB/107.2KB
+✔︎ Bottle libgit2 (1.9.3)                                                                     Downloaded    1.9MB/  1.9MB
+✔︎ Bottle curl (8.20.0)                                                                       Downloaded    1.6MB/  1.6MB
+✔︎ Bottle p7zip (17.06)                                                                       Downloaded    3.8MB/  3.8MB
+✔︎ Bottle openblas64 (0.3.33)                                                                 Downloaded   17.6MB/ 17.6MB
+✔︎ Bottle suite-sparse (7.12.2)                                                               Downloaded   17.8MB/ 17.8MB
+✔︎ Bottle julia (1.12.6)                                                                      Downloaded  171.2MB/171.2MB
+==> Installing dependencies for julia: libssh2, curl, libblastrampoline, libgit2, openblas64, openlibm, p7zip, suite-sparse and utf8proc
+==> Installing julia dependency: libssh2
+==> Pouring libssh2--1.11.1_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libssh2/1.11.1_1: 201 files, 1.3MB
+==> Installing julia dependency: curl
+==> Pouring curl--8.20.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/curl/8.20.0: 554 files, 4.8MB
+==> Installing julia dependency: libblastrampoline
+==> Pouring libblastrampoline--5.15.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libblastrampoline/5.15.0: 269 files, 3.8MB
+==> Installing julia dependency: libgit2
+==> Pouring libgit2--1.9.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libgit2/1.9.3: 109 files, 5.0MB
+==> Installing julia dependency: openblas64
+==> Pouring openblas64--0.3.33.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openblas64/0.3.33: 29 files, 55.8MB
+==> Installing julia dependency: openlibm
+==> Pouring openlibm--0.8.7.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/openlibm/0.8.7: 40 files, 572.4KB
+==> Installing julia dependency: p7zip
+==> Pouring p7zip--17.06.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/p7zip/17.06: 107 files, 9.6MB
+==> Installing julia dependency: suite-sparse
+==> Pouring suite-sparse--7.12.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/suite-sparse/7.12.2: 258 files, 51.4MB
+==> Installing julia dependency: utf8proc
+==> Pouring utf8proc--2.11.3.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/utf8proc/2.11.3: 15 files, 473.8KB
+==> Installing julia
+==> Pouring julia--1.12.6.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/julia/1.12.6: 2,713 files, 648.4MB
+==> Running `brew cleanup julia`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] Installing go...
+==> Fetching downloads for: go
+✔︎ Bottle Manifest go (1.26.3)                                                                Downloaded    7.5KB/  7.5KB
+✔︎ Bottle go (1.26.3)                                                                         Downloaded   64.0MB/ 64.0MB
+==> Pouring go--1.26.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/go/1.26.3: 14,960 files, 228.6MB
+==> Running `brew cleanup go`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] Installing lua...
+==> Fetching downloads for: lua
+✔︎ Bottle Manifest lua (5.5.0)                                                                Downloaded    7.9KB/  7.9KB
+✔︎ Bottle lua (5.5.0)                                                                         Downloaded  341.6KB/341.6KB
+==> Pouring lua--5.5.0.arm64_tahoe.bottle.tar.gz
+==> Caveats
+You may also want luarocks:
+  brew install luarocks
+==> Summary
+🍺  /opt/homebrew/Cellar/lua/5.5.0: 30 files, 977.9KB
+==> Running `brew cleanup lua`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] [4/12] Installing package managers...
+[INFO] Installing nvm...
+==> Fetching downloads for: nvm
+✔︎ Bottle Manifest nvm (0.40.4)                                                               Downloaded    2.0KB/  2.0KB
+✔︎ Bottle nvm (0.40.4)                                                                        Downloaded   53.3KB/ 53.3KB
+==> Pouring nvm--0.40.4.all.bottle.tar.gz
+==> Caveats
+Please note that upstream has asked us to make explicit managing
+nvm via Homebrew is unsupported by them and you should check any
+problems against the standard nvm install method prior to reporting.
+
+You should create NVM's working directory if it doesn't exist:
+  mkdir ~/.nvm
+
+Add the following to your shell profile e.g. ~/.profile or ~/.zshrc:
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+You can set $NVM_DIR to any location, but leaving it unchanged from
+/opt/homebrew/Cellar/nvm/0.40.4 will destroy any nvm-installed Node installations
+upon upgrade/reinstall.
+
+Type `nvm help` for further information.
+==> Summary
+🍺  /opt/homebrew/Cellar/nvm/0.40.4: 10 files, 214.4KB
+==> Running `brew cleanup nvm`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+downloading uv 0.11.14 aarch64-apple-darwin
+installing to /Users/pro_nurse/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+> install.packages("pak", repos="https://cloud.r-project.org/")
+Installing package into ‘/opt/homebrew/lib/R/4.6/site-library’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/pak_0.9.5.tar.gz'
+Content type 'application/x-gzip' length 3336780 bytes (3.2 MB)
+==================================================
+downloaded 3.2 MB
+
+* installing *source* package ‘pak’ ...
+** this is package ‘pak’ version ‘0.9.5’
+** package ‘pak’ successfully unpacked and MD5 sums checked
+** using staged installation
+** Running ./configure
+** libs
+Current platform: aarch64-apple-darwin25.4.0 
+Build platform:   
+Target platform:   
+
+Compiling R6 
+
+Compiling cli 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c ansi.c -o ansi.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c diff.c -o diff.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c errors.c -o errors.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c glue.c -o glue.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c inst.c -o inst.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c keypress-unix.c -o keypress-unix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c keypress-win.c -o keypress-win.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c keypress.c -o keypress.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c md5.c -o md5.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c progress-altrep.c -o progress-altrep.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c progress.c -o progress.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c sha1.c -o sha1.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c sha256.c -o sha256.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c thread.c -o thread.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c tty.c -o tty.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c utf8.c -o utf8.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c utils.c -o utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c vt.c -o vt.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c vtparse.c -o vtparse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c vtparse_table.c -o vtparse_table.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c win-utf8.c -o win-utf8.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c winfiles.c -o winfiles.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c xxhash.c -o xxhash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I../inst/include  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c xxhash2.c -o xxhash2.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o cli.so ansi.o cleancall.o diff.o errors.o glue.o init.o inst.o keypress-unix.o keypress-win.o keypress.o md5.o progress-altrep.o progress.o sha1.o sha256.o thread.o tty.o utf8.o utils.o vt.o vtparse.o vtparse_table.o win-utf8.o winfiles.o xxhash.o xxhash2.o -lpthread -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/cli/libs
+
+Compiling curl 
+Using PKG_CFLAGS=
+Using PKG_LIBS=-lcurl
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+rm -f curl.so callbacks.o curl.o download.o escape.o fetch.o findport.o form.o getdate.o handle.o ieproxy.o init.o interrupt.o multi.o nslookup.o options.o reflist.o split.o ssl.o typechecking.o utils.o version.o winidn.o writer.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c callbacks.c -o callbacks.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c curl.c -o curl.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c download.c -o download.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c escape.c -o escape.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c fetch.c -o fetch.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c findport.c -o findport.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c form.c -o form.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c getdate.c -o getdate.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c handle.c -o handle.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c ieproxy.c -o ieproxy.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c interrupt.c -o interrupt.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c multi.c -o multi.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c nslookup.c -o nslookup.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c options.c -o options.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c reflist.c -o reflist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c split.c -o split.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c ssl.c -o ssl.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c typechecking.c -o typechecking.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c utils.c -o utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c version.c -o version.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c winidn.c -o winidn.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DSTRICT_R_HEADERS -DR_NO_REMAP  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c writer.c -o writer.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o curl.so callbacks.o curl.o download.o escape.o fetch.o findport.o form.o getdate.o handle.o ieproxy.o init.o interrupt.o multi.o nslookup.o options.o reflist.o split.o ssl.o typechecking.o utils.o version.o winidn.o writer.o -lcurl -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/curl/libs
+
+Compiling filelock 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+rm -f filelock.so init.o filelock-unix.o locklist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c filelock-unix.c -o filelock-unix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c locklist.c -o locklist.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o filelock.so init.o filelock-unix.o locklist.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/filelock/libs
+
+Compiling jsonlite 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c base64.c -o base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c collapse_array.c -o collapse_array.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c collapse_object.c -o collapse_object.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c collapse_pretty.c -o collapse_pretty.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c escape_chars.c -o escape_chars.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c integer64_to_na.c -o integer64_to_na.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c is_datelist.c -o is_datelist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c is_recordlist.c -o is_recordlist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c is_scalarlist.c -o is_scalarlist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c modp_numtoa.c -o modp_numtoa.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c null_to_na.c -o null_to_na.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c num_to_char.c -o num_to_char.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c parse.c -o parse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c prettify.c -o prettify.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c push_parser.c -o push_parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c r-base64.c -o r-base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c register.c -o register.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c row_collapse.c -o row_collapse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c transpose_list.c -o transpose_list.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c validate.c -o validate.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl.c -o yajl/yajl.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_alloc.c -o yajl/yajl_alloc.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_buf.c -o yajl/yajl_buf.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_encode.c -o yajl/yajl_encode.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_gen.c -o yajl/yajl_gen.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_lex.c -o yajl/yajl_lex.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_parser.c -o yajl/yajl_parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -Iyajl/api  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden  -fPIC  -g -O2  -c yajl/yajl_tree.c -o yajl/yajl_tree.o
+ar rcs yajl/libstatyajl.a yajl/yajl.o yajl/yajl_alloc.o yajl/yajl_buf.o yajl/yajl_encode.o yajl/yajl_gen.o yajl/yajl_lex.o yajl/yajl_parser.o yajl/yajl_tree.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o jsonlite.so base64.o collapse_array.o collapse_object.o collapse_pretty.o escape_chars.o integer64_to_na.o is_datelist.o is_recordlist.o is_scalarlist.o modp_numtoa.o null_to_na.o num_to_char.o parse.o prettify.o push_parser.o r-base64.o register.o row_collapse.o transpose_list.o validate.o -Lyajl -lstatyajl -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/jsonlite/libs
+in method for ‘asJSON’ with signature ‘"AsIs"’: no definition for class “AsIs”
+in method for ‘asJSON’ with signature ‘"ITime"’: no definition for class “ITime”
+in method for ‘asJSON’ with signature ‘"hms"’: no definition for class “hms”
+in method for ‘asJSON’ with signature ‘"json"’: no definition for class “json”
+in method for ‘asJSON’ with signature ‘"integer64"’: no definition for class “integer64”
+in method for ‘asJSON’ with signature ‘"pairlist"’: no definition for class “pairlist”
+in method for ‘asJSON’ with signature ‘"blob"’: no definition for class “blob”
+in method for ‘asJSON’ with signature ‘"scalar"’: no definition for class “scalar”
+in method for ‘asJSON’ with signature ‘"sf"’: no definition for class “sf”
+in method for ‘asJSON’ with signature ‘"sfc"’: no definition for class “sfc”
+in method for ‘asJSON’ with signature ‘"vctrs_vctr"’: no definition for class “vctrs_vctr”
+
+Compiling lpSolve 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c colamd.c -o colamd.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c commonlib.c -o commonlib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c hbio.c -o hbio.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c ini.c -o ini.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c isfixedvar.c -o isfixedvar.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_Hash.c -o lp_Hash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_LUSOL.c -o lp_LUSOL.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_MDO.c -o lp_MDO.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_MPS.c -o lp_MPS.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_SOS.c -o lp_SOS.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_crash.c -o lp_crash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_lib.c -o lp_lib.o
+lp_lib.c:1246:26: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+ 1246 |     if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */) {
+      |         ~~~~~~~~~~~~~~~~~^~~~~~~
+lp_lib.c:1246:26: note: remove extraneous parentheses around the comparison to silence this warning
+ 1246 |     if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */) {
+      |        ~                 ^      ~
+lp_lib.c:1246:26: note: use '=' to turn this equality comparison into an assignment
+ 1246 |     if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */) {
+      |                          ^~
+      |                          =
+lp_lib.c:1252:28: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+ 1252 |       if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */)
+      |           ~~~~~~~~~~~~~~~~~^~~~~~~
+lp_lib.c:1252:28: note: remove extraneous parentheses around the comparison to silence this warning
+ 1252 |       if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */)
+      |          ~                 ^      ~
+lp_lib.c:1252:28: note: use '=' to turn this equality comparison into an assignment
+ 1252 |       if((lp->objfromvalue == NULL) /* || (lp->objtillvalue == NULL) */)
+      |                            ^~
+      |                            =
+2 warnings generated.
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_matrix.c -o lp_matrix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_mipbb.c -o lp_mipbb.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_params.c -o lp_params.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_presolve.c -o lp_presolve.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_price.c -o lp_price.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_pricePSE.c -o lp_pricePSE.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_report.c -o lp_report.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_rlp.c -o lp_rlp.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_scale.c -o lp_scale.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_simplex.c -o lp_simplex.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_utils.c -o lp_utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lp_wlp.c -o lp_wlp.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lpslink56.c -o lpslink56.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lusol.c -o lusol.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lusolio.c -o lusolio.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c mmio.c -o mmio.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c myblas.c -o myblas.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sparselib.c -o sparselib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I . -DINTEGERTIME -DPARSER_LP -DBUILDING_FOR_R -DYY_NEVER_INTERACTIVE -DUSRDLL -DCLOCKTIME -DRoleIsExternalInvEngine -DINVERSE_ACTIVE=INVERSE_LUSOL -DINLINE=static -DParanoia  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yacc_read.c -o yacc_read.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o lpSolve.so colamd.o commonlib.o hbio.o ini.o init.o isfixedvar.o lp_Hash.o lp_LUSOL.o lp_MDO.o lp_MPS.o lp_SOS.o lp_crash.o lp_lib.o lp_matrix.o lp_mipbb.o lp_params.o lp_presolve.o lp_price.o lp_pricePSE.o lp_report.o lp_rlp.o lp_scale.o lp_simplex.o lp_utils.o lp_wlp.o lpslink56.o lusol.o lusolio.o mmio.o myblas.o sparselib.o yacc_read.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/lpSolve/libs
+
+Compiling ps 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -Wall px.c -o px
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api-common.c -o api-common.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c common.c -o common.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c extra.c -o extra.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c dummy.c -o dummy.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c error-codes.c -o error-codes.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c posix.c -o posix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api-posix.c -o api-posix.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c macos.c -o macos.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api-macos.c -o api-macos.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c arch/macos/process_info.c -o arch/macos/process_info.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c arch/macos/disk.c -o arch/macos/disk.o
+arch/macos/disk.c:75:22: warning: variable length array folded to constant array as an extension [-Wgnu-folding-constant]
+   75 |       char disk_name[kMaxDiskNameSize];
+      |                      ^~~~~~~~~~~~~~~~
+1 warning generated.
+clang -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2 -fobjc-exceptions  -c arch/macos/apps.m -o arch/macos/apps.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o ps.so init.o api-common.o common.o extra.o dummy.o error-codes.o cleancall.o posix.o api-posix.o macos.o api-macos.o arch/macos/process_info.o arch/macos/disk.o arch/macos/apps.o -framework AppKit -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/ps
+
+Compiling zip 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -g -O2  miniz.c zip.c unixutils.c tools/cmdzip.c -o tools/cmdzip
+clang -std=gnu23 -g -O2  miniz.c zip.c unixutils.c tools/cmdunzip.c -o tools/cmdunzip
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c miniz.c -o miniz.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c rzip.c -o rzip.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c zip.c -o zip.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include   -fvisibility=hidden -fPIC  -g -O2  -c unixutils.c -o unixutils.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o zip.so init.o miniz.o rzip.o zip.o unixutils.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/zip
+
+Compiling processx 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -Wall tools/px.c -o tools/px
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -I../inst/include -Wall tools/sock.c -o tools/sock
+clang -std=gnu23 -g -O2  -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib supervisor/supervisor.c \
+	      supervisor/utils.c -o supervisor/supervisor
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c base64.c -o base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c client.c -o client.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c errors.c -o errors.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L"/opt/homebrew/Cellar/r/4.6.0/lib/R/lib" -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o client.so base64.o client.o errors.o  \
+		 -L"/opt/homebrew/Cellar/r/4.6.0/lib/R/lib" -lR
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c poll.c -o poll.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c processx-connection.c -o processx-connection.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c processx-vector.c -o processx-vector.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c create-time.c -o create-time.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/childlist.c -o unix/childlist.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/connection.c -o unix/connection.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/processx.c -o unix/processx.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/sigchld.c -o unix/sigchld.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/utils.c -o unix/utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c unix/named_pipe.c -o unix/named_pipe.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o processx.so init.o poll.o errors.o processx-connection.o processx-vector.o create-time.o base64.o unix/childlist.o unix/connection.o unix/processx.o unix/sigchld.o unix/utils.o unix/named_pipe.o cleancall.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/processx
+
+Compiling callr 
+
+Compiling desc 
+
+Compiling pkgbuild 
+
+Compiling pkgcache 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c errors.c -o errors.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c lib.c -o lib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG   -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c winfiles.c -o winfiles.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o pkgcache.so errors.o init.o lib.o winfiles.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/pkgcache/libs
+
+Compiling pkgsearch 
+
+Compiling yaml 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c api.c -o api.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c dumper.c -o dumper.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c emitter.c -o emitter.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c implicit.c -o implicit.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c loader.c -o loader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c parser.c -o parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c r_emit.c -o r_emit.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c r_ext.c -o r_ext.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c r_parse.c -o r_parse.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c reader.c -o reader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c scanner.c -o scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I. -DNDEBUG  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c writer.c -o writer.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o yaml.so api.o dumper.o emitter.o implicit.o loader.o parser.o r_emit.o r_ext.o r_parse.o reader.o scanner.o writer.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/yaml/libs
+
+Compiling pkgdepends 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/lib/src/lib.c -o tree-sitter/lib/src/lib.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/r/parser.c -o tree-sitter/r/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/r/scanner.c -o tree-sitter/r/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown/parser.c -o tree-sitter/markdown/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown/scanner.c -o tree-sitter/markdown/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown-inline/parser.c -o tree-sitter/markdown-inline/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/markdown-inline/scanner.c -o tree-sitter/markdown-inline/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/yaml/parser.c -o tree-sitter/yaml/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter/yaml/scanner.c -o tree-sitter/yaml/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/api.c -o yaml/api.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/dumper.c -o yaml/dumper.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/emitter.c -o yaml/emitter.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/loader.c -o yaml/loader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/parser.c -o yaml/parser.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/reader.c -o yaml/reader.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/scanner.c -o yaml/scanner.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml/writer.c -o yaml/writer.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c cleancall.c -o cleancall.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c tree-sitter.c -o tree-sitter.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -I./tree-sitter/lib/include -I./tree-sitter/lib/src -I./yaml  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c yaml.c -o yaml.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o pkgdepends.so tree-sitter/lib/src/lib.o tree-sitter/r/parser.o tree-sitter/r/scanner.o tree-sitter/markdown/parser.o tree-sitter/markdown/scanner.o tree-sitter/markdown-inline/parser.o tree-sitter/markdown-inline/scanner.o tree-sitter/yaml/parser.o tree-sitter/yaml/scanner.o yaml/api.o yaml/dumper.o yaml/emitter.o yaml/loader.o yaml/parser.o yaml/reader.o yaml/scanner.o yaml/writer.o init.o cleancall.o tree-sitter.o yaml.o -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/pkgdepends/libs
+
+Compiling keyring 
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.1.1.101)’
+using SDK: ‘MacOSX26.5.sdk’
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c aes.c -o aes.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c aesce.c -o aesce.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c aesni.c -o aesni.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c base64.c -o base64.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c blake2b-compress-ref.c -o blake2b-compress-ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c blake2b-ref.c -o blake2b-ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c core_hsalsa20_ref2.c -o core_hsalsa20_ref2.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c core_salsa_ref.c -o core_salsa_ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c crypto_generichash.c -o crypto_generichash.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c crypto_secretbox_easy.c -o crypto_secretbox_easy.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c generichash_blake2b.c -o generichash_blake2b.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c init.c -o init.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c keyring_macos.c -o keyring_macos.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c keyring_secret_service.c -o keyring_secret_service.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c keyring_wincred.c -o keyring_wincred.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c onetimeauth_poly1305.c -o onetimeauth_poly1305.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c padlock.c -o padlock.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c platform_util.c -o platform_util.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c poly1305_donna.c -o poly1305_donna.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c raes.c -o raes.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c randombytes_sysrandom.c -o randombytes_sysrandom.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c salsa20_ref.c -o salsa20_ref.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sha256.c -o sha256.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sodium-utils.c -o sodium-utils.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c sodium.c -o sodium.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c stream_salsa20.c -o stream_salsa20.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c verify.c -o verify.o
+clang -std=gnu23 -I"/opt/homebrew/Cellar/r/4.6.0/lib/R/include" -DNDEBUG -DMBEDTLS_AES_C -DMBEDTLS_ALLOW_PRIVATE_ACCESS -DMBEDTLS_PLATFORM_PRINTF_ALT -I.  -I/opt/homebrew/opt/gettext/include -I/opt/homebrew/opt/readline/include -I/opt/homebrew/opt/xz/include -I/opt/homebrew/include    -fPIC  -g -O2  -c win-path.c -o win-path.o
+clang -std=gnu23 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -L/opt/homebrew/opt/gettext/lib -L/opt/homebrew/opt/readline/lib -L/opt/homebrew/opt/xz/lib -L/opt/homebrew/lib -o keyring.so aes.o aesce.o aesni.o base64.o blake2b-compress-ref.o blake2b-ref.o core_hsalsa20_ref2.o core_salsa_ref.o crypto_generichash.o crypto_secretbox_easy.o generichash_blake2b.o init.o keyring_macos.o keyring_secret_service.o keyring_wincred.o onetimeauth_poly1305.o padlock.o platform_util.o poly1305_donna.o raes.o randombytes_sysrandom.o salsa20_ref.o sha256.o sodium-utils.o sodium.o stream_salsa20.o verify.o win-path.o -framework Security -L/opt/homebrew/Cellar/r/4.6.0/lib/R/lib -lR
+installing to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak/library/keyring/libs
+installing via 'install.libs.R' to /opt/homebrew/lib/R/4.6/site-library/00LOCK-pak/00new/pak
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (pak)
+
+The downloaded source packages are in
+	‘/private/var/folders/9p/rp8dwhl528g0q2tl9d7sfhmr0000gn/T/RtmpuKmkVw/downloaded_packages’
+> 
+[INFO] [5/12] Installing data tools...
+[INFO] Installing duckdb...
+==> Fetching downloads for: duckdb
+✔︎ Bottle Manifest duckdb (1.5.2)                                                             Downloaded    7.5KB/  7.5KB
+✔︎ Bottle duckdb (1.5.2)                                                                      Downloaded   49.9MB/ 49.9MB
+==> Pouring duckdb--1.5.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/duckdb/1.5.2: 1,365 files, 200.5MB
+==> Running `brew cleanup duckdb`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] sqlite already installed
+[INFO] Installing xsv...
+==> Fetching downloads for: xsv
+Warning: xsv has been deprecated because it has an archived upstream repository! It was disabled on 2026-04-27.
+✔︎ Bottle Manifest xsv (0.13.0)                                                               Downloaded   13.2KB/ 13.2KB
+✔︎ Bottle xsv (0.13.0)                                                                        Downloaded  981.8KB/981.8KB
+==> Pouring xsv--0.13.0.arm64_tahoe.bottle.3.tar.gz
+🍺  /opt/homebrew/Cellar/xsv/0.13.0: 9 files, 2.8MB
+==> Running `brew cleanup xsv`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] Installing jq...
+==> Fetching downloads for: jq
+✔︎ Bottle Manifest jq (1.8.1)                                                                 Downloaded   10.8KB/ 10.8KB
+✔︎ Bottle Manifest oniguruma (6.9.10)                                                         Downloaded   10.0KB/ 10.0KB
+✔︎ Bottle jq (1.8.1)                                                                          Downloaded  424.2KB/424.2KB
+✔︎ Bottle oniguruma (6.9.10)                                                                  Downloaded  458.4KB/458.4KB
+==> Installing jq dependency: oniguruma
+==> Pouring oniguruma--6.9.10.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/oniguruma/6.9.10: 15 files, 1.5MB
+==> Pouring jq--1.8.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/jq/1.8.1: 20 files, 1.2MB
+==> Running `brew cleanup jq`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+[INFO] Installing yq...
+==> Fetching downloads for: yq
+✔︎ Bottle Manifest yq (4.53.2)                                                                Downloaded    7.4KB/  7.4KB
+✔︎ Bottle yq (4.53.2)                                                                         Downloaded    5.1MB/  5.1MB
+==> Pouring yq--4.53.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/yq/4.53.2: 10 files, 13.3MB
+==> Running `brew cleanup yq`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+[INFO] [6/12] Installing database clients and HTTP tools...
+[INFO] Installing usql...
+Warning: No available formula with the name "usql".
+==> Searching for similarly named formulae and casks...
+Error: No formulae or casks found for usql.
+pro_nurse@Charlies-MacBook-Air hello_world % cd ~/hello_world
+
+# Continue from where it stopped
+brew install curl wget xh httpie
+brew install awscli terraform rclone git gh lazygit delta
+brew install eza bat fd ripgrep fzf zoxide tree htop btop
+brew install tmux rsync
+brew install vim neovim
+brew install --cask visual-studio-code
+brew install just direnv tldr
+
+# SSH key (already exists, skip if done)
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
+[ ! -f ~/.ssh/id_ed25519 ] && ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
+
+# Tailscale
+brew install --cask tailscale
+open /Applications/Tailscale.app
+
+# Shell config
+echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+echo 'alias ls="eza"' >> ~/.zshrc
+echo 'alias ll="eza -la"' >> ~/.zshrc
+echo 'alias cat="bat --style=plain"' >> ~/.zshrc
+echo 'alias lg="lazygit"' >> ~/.zshrc
+
+source ~/.zshrc
+zsh: command not found: #
+Warning: curl 8.20.0 is already installed and up-to-date.
+To reinstall 8.20.0, run:
+  brew reinstall curl
+==> Fetching downloads for: wget, xh and httpie
+✔︎ Bottle Manifest wget (1.25.0)                                                              Downloaded   13.3KB/ 13.3KB
+✔︎ Bottle Manifest xh (0.25.3)                                                                Downloaded    7.4KB/  7.4KB
+✔︎ Bottle Manifest httpie (3.2.4_9)                                                           Downloaded   21.6KB/ 21.6KB
+✔︎ Bottle Manifest certifi (2026.4.22)                                                        Downloaded    2.2KB/  2.2KB
+✔︎ Bottle Manifest libidn2 (2.3.8)                                                            Downloaded   12.8KB/ 12.8KB
+✔︎ Bottle certifi (2026.4.22)                                                                 Downloaded    5.7KB/  5.7KB
+✔︎ Bottle libidn2 (2.3.8)                                                                     Downloaded  309.8KB/309.8KB
+✔︎ Bottle wget (1.25.0)                                                                       Downloaded    1.6MB/  1.6MB
+✔︎ Bottle httpie (3.2.4_9)                                                                    Downloaded    2.7MB/  2.7MB
+✔︎ Bottle xh (0.25.3)                                                                         Downloaded    4.5MB/  4.5MB
+==> Installing wget dependency: libidn2
+==> Pouring libidn2--2.3.8.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libidn2/2.3.8: 80 files, 946.1KB
+==> Pouring wget--1.25.0.arm64_tahoe.bottle.1.tar.gz
+🍺  /opt/homebrew/Cellar/wget/1.25.0: 92 files, 4.7MB
+==> Running `brew cleanup wget`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Pouring xh--0.25.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xh/0.25.3: 14 files, 10.9MB
+==> Running `brew cleanup xh`...
+==> Installing httpie dependency: certifi
+==> Pouring certifi--2026.4.22.all.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/certifi/2026.4.22: 38 files, 20.5KB
+==> Pouring httpie--3.2.4_9.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/httpie/3.2.4_9: 1,265 files, 11.5MB
+==> Running `brew cleanup httpie`...
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+Warning: No available formula with the name "terraform". Did you mean terraformer or terraform-ls?
+==> Searching for similarly named formulae and casks...
+==> Formulae
+cf-terraforming                         terraform-iam-policy-validator          terraform-mcp-server
+iam-policy-json-to-terraform            terraform-inventory                     terraform-module-versions
+terraform-cleaner                       terraform-local                         terraform-provider-libvirt
+terraform-docs                          terraform-ls                            terraform_landscape
+terraform-graph-beautifier              terraform-lsp                           terraformer
+
+To install cf-terraforming, run:
+  brew install cf-terraforming
+
+==> Casks
+termora
+
+To install termora, run:
+  brew install --cask termora
+==> Fetching downloads for: eza, bat, fd, ripgrep, fzf, zoxide, tree, htop and btop
+✔︎ Bottle Manifest bat (0.26.1)                                                               Downloaded   12.1KB/ 12.1KB
+✔︎ Bottle Manifest fd (10.4.2)                                                                Downloaded    7.5KB/  7.5KB
+✔︎ Bottle Manifest ripgrep (15.1.0)                                                           Downloaded    8.8KB/  8.8KB
+✔︎ Bottle Manifest zoxide (0.9.9)                                                             Downloaded    7.4KB/  7.4KB
+✔︎ Bottle Manifest tree (2.3.2)                                                               Downloaded    7.5KB/  7.5KB
+✔︎ Bottle Manifest htop (3.5.1)                                                               Downloaded    8.7KB/  8.7KB
+✔︎ Bottle Manifest eza (0.23.4)                                                               Downloaded   11.2KB/ 11.2KB
+✔︎ Bottle Manifest btop (1.4.7)                                                               Downloaded   10.7KB/ 10.7KB
+✔︎ Bottle Manifest fzf (0.72.0)                                                               Downloaded    7.9KB/  7.9KB
+✔︎ Bottle Manifest ncurses (6.6)                                                              Downloaded   11.9KB/ 11.9KB
+✔︎ Bottle tree (2.3.2)                                                                        Downloaded   66.3KB/ 66.3KB
+✔︎ Bottle eza (0.23.4)                                                                        Downloaded  628.7KB/628.7KB
+✔︎ Bottle htop (3.5.1)                                                                        Downloaded  151.5KB/151.5KB
+✔︎ Bottle zoxide (0.9.9)                                                                      Downloaded  468.4KB/468.4KB
+✔︎ Bottle btop (1.4.7)                                                                        Downloaded  570.8KB/570.8KB
+✔︎ Bottle fd (10.4.2)                                                                         Downloaded    1.3MB/  1.3MB
+✔︎ Bottle fzf (0.72.0)                                                                        Downloaded    1.9MB/  1.9MB
+✔︎ Bottle ripgrep (15.1.0)                                                                    Downloaded    2.2MB/  2.2MB
+✔︎ Bottle bat (0.26.1)                                                                        Downloaded    2.8MB/  2.8MB
+✔︎ Bottle ncurses (6.6)                                                                       Downloaded    2.5MB/  2.5MB
+==> Pouring eza--0.23.4.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/eza/0.23.4: 15 files, 1.4MB
+==> Running `brew cleanup eza`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Pouring bat--0.26.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/bat/0.26.1: 15 files, 5.0MB
+==> Running `brew cleanup bat`...
+==> Pouring fd--10.4.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/fd/10.4.2: 15 files, 3MB
+==> Running `brew cleanup fd`...
+==> Pouring ripgrep--15.1.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/ripgrep/15.1.0: 14 files, 6.4MB
+==> Running `brew cleanup ripgrep`...
+==> Pouring fzf--0.72.0.arm64_tahoe.bottle.tar.gz
+==> Caveats
+To set up shell integration, see:
+  https://github.com/junegunn/fzf#setting-up-shell-integration
+To use fzf in Vim, add the following line to your .vimrc:
+  set rtp+=/opt/homebrew/opt/fzf
+==> Summary
+🍺  /opt/homebrew/Cellar/fzf/0.72.0: 19 files, 5.0MB
+==> Running `brew cleanup fzf`...
+==> Pouring zoxide--0.9.9.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/zoxide/0.9.9: 18 files, 1MB
+==> Running `brew cleanup zoxide`...
+==> Pouring tree--2.3.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/tree/2.3.2: 9 files, 196.5KB
+==> Running `brew cleanup tree`...
+==> Installing htop dependency: ncurses
+==> Pouring ncurses--6.6.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/ncurses/6.6: 4,086 files, 10.5MB
+==> Pouring htop--3.5.1.arm64_tahoe.bottle.tar.gz
+==> Caveats
+htop requires root privileges to correctly display all running processes,
+so you will need to run `sudo htop`.
+You should be certain that you trust any software you grant root privileges.
+==> Summary
+🍺  /opt/homebrew/Cellar/htop/3.5.1: 13 files, 416.7KB
+==> Running `brew cleanup htop`...
+==> Pouring btop--1.4.7.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/btop/1.4.7: 53 files, 1.5MB
+==> Running `brew cleanup btop`...
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+==> fzf
+To set up shell integration, see:
+  https://github.com/junegunn/fzf#setting-up-shell-integration
+To use fzf in Vim, add the following line to your .vimrc:
+  set rtp+=/opt/homebrew/opt/fzf
+==> htop
+htop requires root privileges to correctly display all running processes,
+so you will need to run `sudo htop`.
+You should be certain that you trust any software you grant root privileges.
+==> Fetching downloads for: tmux and rsync
+✔︎ Bottle Manifest tmux (3.6a)                                                                Downloaded   11.8KB/ 11.8KB
+✔︎ Bottle Manifest rsync (3.4.2)                                                              Downloaded   14.7KB/ 14.7KB
+✔︎ Bottle Manifest libevent (2.1.12_1)                                                        Downloaded   17.0KB/ 17.0KB
+✔︎ Bottle Manifest popt (1.19)                                                                Downloaded   13.3KB/ 13.3KB
+✔︎ Bottle Manifest xxhash (0.8.3)                                                             Downloaded   10.4KB/ 10.4KB
+✔︎ Bottle popt (1.19)                                                                         Downloaded   59.5KB/ 59.5KB
+✔︎ Bottle xxhash (0.8.3)                                                                      Downloaded  149.6KB/149.6KB
+✔︎ Bottle tmux (3.6a)                                                                         Downloaded  511.8KB/511.8KB
+✔︎ Bottle libevent (2.1.12_1)                                                                 Downloaded  738.7KB/738.7KB
+✔︎ Bottle rsync (3.4.2)                                                                       Downloaded  418.5KB/418.5KB
+==> Installing tmux dependency: libevent
+==> Pouring libevent--2.1.12_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libevent/2.1.12_1: 58 files, 2.4MB
+==> Pouring tmux--3.6a.arm64_tahoe.bottle.tar.gz
+==> Caveats
+Example configuration has been installed to:
+  /opt/homebrew/opt/tmux/share/tmux
+==> Summary
+🍺  /opt/homebrew/Cellar/tmux/3.6a: 10 files, 1.3MB
+==> Running `brew cleanup tmux`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Installing dependencies for rsync: popt and xxhash
+==> Installing rsync dependency: popt
+==> Pouring popt--1.19.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/popt/1.19: 11 files, 198.3KB
+==> Installing rsync dependency: xxhash
+==> Pouring xxhash--0.8.3.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/xxhash/0.8.3: 28 files, 575.6KB
+==> Installing rsync
+==> Pouring rsync--3.4.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/rsync/3.4.2: 13 files, 1.1MB
+==> Running `brew cleanup rsync`...
+==> Caveats
+==> tmux
+Example configuration has been installed to:
+  /opt/homebrew/opt/tmux/share/tmux
+==> Fetching downloads for: vim and neovim
+✔︎ Bottle Manifest vim (9.2.0450)                                                             Downloaded   42.0KB/ 42.0KB
+✔︎ Bottle Manifest neovim (0.12.2)                                                            Downloaded   15.8KB/ 15.8KB
+✔︎ Bottle Manifest libsodium (1.0.22)                                                         Downloaded    7.3KB/  7.3KB
+✔︎ Bottle Manifest lua@5.4 (5.4.8)                                                            Downloaded    8.5KB/  8.5KB
+✔︎ Bottle Manifest libyaml (0.2.5)                                                            Downloaded   14.5KB/ 14.5KB
+✔︎ Bottle Manifest ruby (4.0.4)                                                               Downloaded   19.1KB/ 19.1KB
+✔︎ Bottle Manifest lpeg (1.1.0_2)                                                             Downloaded    7.1KB/  7.1KB
+✔︎ Bottle Manifest luajit (2.1.1774896198)                                                    Downloaded    7.8KB/  7.8KB
+✔︎ Bottle libyaml (0.2.5)                                                                     Downloaded  107.7KB/107.7KB
+✔︎ Bottle Manifest luv (1.52.1-0)                                                             Downloaded    8.1KB/  8.1KB
+✔︎ Bottle lua@5.4 (5.4.8)                                                                     Downloaded  270.0KB/270.0KB
+✔︎ Bottle Manifest tree-sitter (0.26.8)                                                       Downloaded    7.3KB/  7.3KB
+✔︎ Bottle libsodium (1.0.22)                                                                  Downloaded  408.8KB/408.8KB
+✔︎ Bottle Manifest unibilium (2.1.2)                                                          Downloaded    9.5KB/  9.5KB
+✔︎ Bottle lpeg (1.1.0_2)                                                                      Downloaded   96.2KB/ 96.2KB
+✔︎ Bottle luv (1.52.1-0)                                                                      Downloaded  251.2KB/251.2KB
+✔︎ Bottle unibilium (2.1.2)                                                                   Downloaded  153.5KB/153.5KB
+✔︎ Bottle tree-sitter (0.26.8)                                                                Downloaded  193.8KB/193.8KB
+✔︎ Bottle luajit (2.1.1774896198)                                                             Downloaded  904.3KB/904.3KB
+✔︎ Bottle neovim (0.12.2)                                                                     Downloaded    8.2MB/  8.2MB
+✔︎ Bottle vim (9.2.0450)                                                                      Downloaded   14.7MB/ 14.7MB
+✔︎ Bottle ruby (4.0.4)                                                                        Downloaded   17.0MB/ 17.0MB
+==> Installing dependencies for vim: libsodium, lua@5.4, libyaml and ruby
+==> Installing vim dependency: libsodium
+==> Pouring libsodium--1.0.22.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libsodium/1.0.22: 88 files, 1.1MB
+==> Installing vim dependency: lua@5.4
+==> Pouring lua@5.4--5.4.8.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/lua@5.4/5.4.8: 30 files, 819.5KB
+==> Installing vim dependency: libyaml
+==> Pouring libyaml--0.2.5.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libyaml/0.2.5: 11 files, 360.6KB
+==> Installing vim dependency: ruby
+==> Pouring ruby--4.0.4.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/ruby/4.0.4: 19,310 files, 60.9MB
+==> Installing vim
+==> Pouring vim--9.2.0450.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/vim/9.2.0450: 2,550 files, 45MB
+==> Running `brew cleanup vim`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Installing dependencies for neovim: lpeg, luajit, luv, tree-sitter and unibilium
+==> Installing neovim dependency: lpeg
+==> Pouring lpeg--1.1.0_2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/lpeg/1.1.0_2: 16 files, 431.4KB
+==> Installing neovim dependency: luajit
+==> Pouring luajit--2.1.1774896198.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/luajit/2.1.1774896198: 56 files, 2.2MB
+==> Installing neovim dependency: luv
+==> Pouring luv--1.52.1-0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/luv/1.52.1-0: 16 files, 926.2KB
+==> Installing neovim dependency: tree-sitter
+==> Pouring tree-sitter--0.26.8.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/tree-sitter/0.26.8: 11 files, 509.0KB
+==> Installing neovim dependency: unibilium
+==> Pouring unibilium--2.1.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/unibilium/2.1.2: 64 files, 335.2KB
+==> Installing neovim
+==> Pouring neovim--0.12.2.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/neovim/0.12.2: 2,112 files, 29.6MB
+==> Running `brew cleanup neovim`...
+==> Fetching downloads for: visual-studio-code
+✔︎ Cask visual-studio-code (1.120.0)                                                          Verified    207.3MB/207.3MB
+==> Installing Cask visual-studio-code
+==> Moving App 'Visual Studio Code.app' to '/Applications/Visual Studio Code.app'
+==> Linking Binary 'code' to '/opt/homebrew/bin/code'
+==> Linking Binary 'code-tunnel' to '/opt/homebrew/bin/code-tunnel'
+🍺  visual-studio-code was successfully installed!
+✔︎ JSON API formula.jws.json                                                                  Downloaded   32.0MB/ 32.0MB
+✔︎ JSON API cask.jws.json                                                                     Downloaded   15.4MB/ 15.4MB
+==> Fetching downloads for: just, direnv and tldr
+Warning: tldr has been deprecated because it is not maintained upstream! It was disabled on 2025-10-24.
+Replacement:
+  brew install --formula tlrc
+✔︎ Bottle Manifest just (1.51.0)                                                              Downloaded    7.4KB/  7.4KB
+✔︎ Bottle Manifest direnv (2.37.1)                                                            Downloaded   14.9KB/ 14.9KB
+✔︎ Bottle Manifest tldr (1.6.1)                                                               Downloaded   20.3KB/ 20.3KB
+✔︎ Bottle Manifest bash (5.3.9)                                                               Downloaded   11.1KB/ 11.1KB
+✔︎ Bottle Manifest libzip (1.11.4_1)                                                          Downloaded   11.4KB/ 11.4KB
+✔︎ Bottle tldr (1.6.1)                                                                        Downloaded   17.0KB/ 17.0KB
+✔︎ Bottle libzip (1.11.4_1)                                                                   Downloaded  144.8KB/144.8KB
+✔︎ Bottle just (1.51.0)                                                                       Downloaded    1.9MB/  1.9MB
+✔︎ Bottle bash (5.3.9)                                                                        Downloaded    3.4MB/  3.4MB
+✔︎ Bottle direnv (2.37.1)                                                                     Downloaded    6.4MB/  6.4MB
+==> Pouring just--1.51.0.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/just/1.51.0: 13 files, 4.7MB
+==> Running `brew cleanup just`...
+Disable this behaviour by setting `HOMEBREW_NO_INSTALL_CLEANUP=1`.
+Hide these hints with `HOMEBREW_NO_ENV_HINTS=1` (see `man brew`).
+==> Installing direnv dependency: bash
+==> Pouring bash--5.3.9.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/bash/5.3.9: 172 files, 13.8MB
+==> Pouring direnv--2.37.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/direnv/2.37.1: 12 files, 11.6MB
+==> Running `brew cleanup direnv`...
+==> Installing tldr dependency: libzip
+==> Pouring libzip--1.11.4_1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/libzip/1.11.4_1: 161 files, 955.2KB
+==> Pouring tldr--1.6.1.arm64_tahoe.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/tldr/1.6.1: 11 files, 114KB
+==> Running `brew cleanup tldr`...
+==> Caveats
+zsh completions have been installed to:
+  /opt/homebrew/share/zsh/site-functions
+zsh: number expected
+zsh: command not found: #
+==> Fetching downloads for: tailscale-app
+✔︎ Cask tailscale-app (1.98.1)                                                                Verified     19.7MB/ 19.7MB
+==> Caveats
+tailscale-app requires a kernel extension to work.
+If the installation fails, retry after you enable it in:
+  System Settings → Privacy & Security
+
+For more information, refer to vendor documentation or this Apple Technical Note:
+  https://developer.apple.com/library/content/technotes/tn2459/_index.html
+
+Installing tailscale-app means you have AGREED to the license at:
+  https://tailscale.com/terms
+
+==> Installing Cask tailscale-app
+==> Running installer for tailscale-app with `sudo` (which may request your password)...
+Password:
+Sorry, try again.
+Password:
+installer: Package name is Tailscale
+installer: Installing at base path /
+installer: The install was successful.
+🍺  tailscale-app was successfully installed!
+zsh: command not found: #
+pro_nurse@Charlies-MacBook-Air hello_world % open /Applications/Tailscale.app
+
+brew install just direnv tldr
+
+echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+echo 'eval "$(direnv hook zsh)"' >> ~/.zshrc
+echo 'alias ls="eza"' >> ~/.zshrc
+echo 'alias ll="eza -la"' >> ~/.zshrc
+echo 'alias cat="bat --style=plain"' >> ~/.zshrc
+echo 'alias lg="lazygit"' >> ~/.zshrc
+
+source ~/.zshrc
+Warning: just 1.51.0 is already installed and up-to-date.
+To reinstall 1.51.0, run:
+  brew reinstall just
+Warning: direnv 2.37.1 is already installed and up-to-date.
+To reinstall 2.37.1, run:
+  brew reinstall direnv
+Warning: tldr 1.6.1 is already installed and up-to-date.
+To reinstall 1.6.1, run:
+  brew reinstall tldr
+pro_nurse@Charlies-MacBook-Air hello_world % sed -i '' '/brew_install usql/d' bootstrap-macos.sh
+git add bootstrap-macos.sh
+git commit -m "Remove usql (not available on Homebrew)"
+git push origin main
+[main 885e010] Remove usql (not available on Homebrew)
+ 1 file changed, 1 deletion(-)
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 314 bytes | 314.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:lettucehead/hello_world.git
+   7980a0b..885e010  main -> main
+pro_nurse@Charlies-MacBook-Air hello_world % cd ~/hello_world
+mkdir -p logs
+./bootstrap-macos.sh 2>&1 | tee logs/bootstrap_$(date +%Y%m%d_%H%M%S).log
+============================================================
+macOS FRESH INSTALL BOOTSTRAP - Fri May 15 11:22:48 EDT 2026
+============================================================
+
+[INFO] [1/12] Checking Xcode CLI tools...
+[INFO] Xcode CLI tools already installed
+[INFO] [2/12] Checking Homebrew...
+[INFO] Homebrew already installed
+[INFO] [3/12] Installing languages...
+[INFO] node already installed
+[INFO] python already installed
+[INFO] r already installed
+[INFO] julia already installed
+[INFO] go already installed
+[

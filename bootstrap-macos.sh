@@ -151,7 +151,6 @@ brew_install yq
 # STEP 6: Database clients & HTTP tools
 #=============================================================================
 info "[6/12] Installing database clients and HTTP tools..."
-brew_install usql
 brew_install curl
 brew_install wget
 brew_install xh

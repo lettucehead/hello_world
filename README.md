@@ -1,17 +1,18 @@
-# Hello World
+# hello_world
 
-This is a simple Python script that prints "Hello, World!" to the console.
+## Quick Setup (New Computer)
 
-## Usage
+Run this on a new computer:
 
-Run the script with Python:
+    curl -sL https://raw.githubusercontent.com/lettucehead/hello_world/main/bootstrap-github.sh | bash
 
-```bash
-python hello.py
-```
+## Scripts
 
-## Output
-
-```
-Hello, World!
-```
+| Script | Description |
+|--------|-------------|
+| bootstrap-github.sh | First-time setup on new computer |
+| github-setup.sh | Push files to GitHub |
+| mac-setup.sh | SSH from Mac to Chromebook |
+| chromebook-setup.sh | SSH from Chromebook to Mac |
+| bootstrap-macos.sh | macOS system bootstrap |
+| bootstrap-crostini.sh | Chromebook Linux bootstrap |

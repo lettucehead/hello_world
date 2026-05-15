@@ -1,4 +1,5 @@
 #!/bin/bash
+# macOS Fresh Install Bootstrap v0.6.0
 set -euo pipefail
 
 DRY_RUN=false
@@ -11,7 +12,7 @@ run() {
     if [ "$DRY_RUN" = true ]; then
         printf "[DRY RUN] %s\n" "$*"
     else
-        bash -c "$*"
+        eval "$*"
     fi
 }
 
@@ -27,7 +28,6 @@ append_if_missing() {
     local file="$1"
     local marker="$2"
     local content="$3"
-
     mkdir -p "$(dirname "$file")"
     if [ "$DRY_RUN" = true ]; then
         printf "[DRY RUN] append to %s if missing %s\n" "$file" "$marker"
@@ -36,77 +36,92 @@ append_if_missing() {
     fi
 }
 
-install_brew() {
-    if ! command_exists brew; then
-        info "Installing Homebrew..."
-        run "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-    else
-        info "Homebrew already installed"
+echo "============================================================"
+echo "macOS FRESH INSTALL BOOTSTRAP - $(date)"
+echo "============================================================"
+echo ""
+
+#=============================================================================
+# STEP 1: Xcode CLI tools (MUST BE FIRST)
+#=============================================================================
+info "[1/12] Checking Xcode CLI tools..."
+if ! xcode-select -p &>/dev/null; then
+    info "Installing Xcode CLI tools..."
+    xcode-select --install 2>/dev/null || true
+    
+    echo ""
+    echo "============================================================"
+    echo "WAITING FOR XCODE CLI TOOLS"
+    echo "============================================================"
+    echo ""
+    echo "  ⌘ Cmd+Tab to find the 'Install Command Line Developer Tools' window"
+    echo "  Click 'Install' and wait 5-10 minutes"
+    echo ""
+    
+    if [ "$DRY_RUN" = false ]; then
+        until xcode-select -p &>/dev/null; do
+            if ps aux | grep -i "Install Command Line" | grep -v grep > /dev/null; then
+                PROC_INFO=$(ps aux | grep -i "Install Command Line" | grep -v grep | awk '{printf "PID: %s, CPU: %s%%, MEM: %s%%", $2, $3, $4}')
+                echo "$(date '+%H:%M:%S') - Installer running ($PROC_INFO)"
+                echo "                ⌘ Cmd+Tab if you don't see the installer window"
+            else
+                echo "$(date '+%H:%M:%S') - Waiting for installer popup... (⌘ Cmd+Tab to check)"
+            fi
+            sleep 30
+        done
     fi
-    if [ -x "/opt/homebrew/bin/brew" ]; then
-        if [ "$DRY_RUN" = true ]; then
-            printf "[DRY RUN] eval \"$(/opt/homebrew/bin/brew shellenv)\"\n"
-        else
-            eval "$(/opt/homebrew/bin/brew shellenv)"
-        fi
-    elif command_exists brew; then
-        if [ "$DRY_RUN" = true ]; then
-            printf "[DRY RUN] eval \"$(brew shellenv)\"\n"
-        else
-            eval "$(brew shellenv)"
-        fi
-    fi
-}
+    
+    echo ""
+    info "Xcode CLI tools installed!"
+else
+    info "Xcode CLI tools already installed"
+fi
+
+#=============================================================================
+# STEP 2: Homebrew
+#=============================================================================
+info "[2/12] Checking Homebrew..."
+if ! command_exists brew; then
+    info "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    info "Homebrew already installed"
+fi
+
+# Add to PATH
+if [ -x "/opt/homebrew/bin/brew" ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Add to shell profile
+append_if_missing ~/.zprofile "# Homebrew" $'\n# Homebrew\neval "$(/opt/homebrew/bin/brew shellenv)"\n'
 
 brew_install() {
     local package="$1"
-    shift
-    if ! brew list --formula "$package" >/dev/null 2>&1; then
+    if ! brew list --formula "$package" &>/dev/null; then
         info "Installing $package..."
-        if [ "$DRY_RUN" = true ]; then
-            printf "[DRY RUN] brew install %s %s\n" "$package" "$*"
-        else
-            brew install "$package" "$@"
-        fi
+        [ "$DRY_RUN" = true ] && printf "[DRY RUN] brew install %s\n" "$package" && return
+        brew install "$package"
     else
-        info "$package is already installed"
+        info "$package already installed"
     fi
 }
 
 brew_cask_install() {
     local package="$1"
-    if ! brew list --cask --versions "$package" >/dev/null 2>&1; then
+    if ! brew list --cask "$package" &>/dev/null; then
         info "Installing $package..."
-        if [ "$DRY_RUN" = true ]; then
-            printf "[DRY RUN] brew install --cask %s\n" "$package"
-        else
-            brew install --cask "$package"
-        fi
+        [ "$DRY_RUN" = true ] && printf "[DRY RUN] brew install --cask %s\n" "$package" && return
+        brew install --cask "$package"
     else
-        info "$package is already installed"
+        info "$package already installed"
     fi
 }
 
-install_gh_extension() {
-    local extension="$1"
-    if ! gh extension list | grep -q "^$extension" 2>/dev/null; then
-        info "Installing gh extension $extension..."
-        gh extension install "$extension"
-    else
-        info "gh extension $extension already installed"
-    fi
-}
-
-install_brew
-
-info "Installing Xcode CLI tools..."
-if ! xcode-select -p >/dev/null 2>&1; then
-    run "xcode-select --install 2>/dev/null || true"
-else
-    info "Xcode CLI tools already installed"
-fi
-
-info "Installing languages..."
+#=============================================================================
+# STEP 3: Languages
+#=============================================================================
+info "[3/12] Installing languages..."
 brew_install node
 brew_install python
 brew_install r
@@ -114,206 +129,143 @@ brew_install julia
 brew_install go
 brew_install lua
 
-info "Installing package managers..."
+#=============================================================================
+# STEP 4: Package managers
+#=============================================================================
+info "[4/12] Installing package managers..."
 brew_install nvm
-if ! command_exists uv; then
-    run "curl -LsSf https://astral.sh/uv/install.sh | sh"
-fi
-if command_exists R; then
-    run "R --quiet -e 'install.packages(\"pak\", repos=\"https://cloud.r-project.org/\")'"
-fi
+command_exists uv || curl -LsSf https://astral.sh/uv/install.sh | sh
+command_exists R && R --quiet -e 'install.packages("pak", repos="https://cloud.r-project.org/")' || true
 
-info "Installing data tools..."
+#=============================================================================
+# STEP 5: Data tools
+#=============================================================================
+info "[5/12] Installing data tools..."
 brew_install duckdb
 brew_install sqlite
 brew_install xsv
 brew_install jq
 brew_install yq
-if command_exists uv; then
-    run "uv pip install csvkit || true"
-fi
 
-info "Installing database clients..."
-if command_exists uv; then
-    run "uv pip install pgcli mycli litecli || true"
-fi
+#=============================================================================
+# STEP 6: Database clients & HTTP tools
+#=============================================================================
+info "[6/12] Installing database clients and HTTP tools..."
 brew_install usql
-
-info "Installing HTTP tooling..."
 brew_install curl
 brew_install wget
 brew_install xh
 brew_install httpie
-if command_exists uv; then
-    run "uv pip install mitmproxy || true"
-fi
 
-info "Installing cloud tooling..."
+#=============================================================================
+# STEP 7: Cloud & Git tooling
+#=============================================================================
+info "[7/12] Installing cloud and Git tooling..."
 brew_install awscli
-brew_install aws-vault
 brew_install terraform
 brew_install rclone
-brew_cask_install session-manager-plugin
-
-info "Installing Git tooling..."
 brew_install git
 brew_install gh
 brew_install lazygit
 brew_install delta
-if command_exists gh; then
-    install_gh_extension dlvhdr/gh-dash
-fi
 
-info "Installing file utilities..."
+#=============================================================================
+# STEP 8: File & system utilities
+#=============================================================================
+info "[8/12] Installing file and system utilities..."
 brew_install eza
 brew_install bat
 brew_install fd
 brew_install ripgrep
 brew_install fzf
 brew_install zoxide
-brew_install broot
-brew_install ranger
-brew_install ncdu
 brew_install tree
-brew_install trash-cli
-
-info "Installing system utilities..."
 brew_install htop
 brew_install btop
-brew_install procs
-brew_install duf
 
-info "Installing remote utilities..."
-brew_install mosh
-brew_install rsync
+#=============================================================================
+# STEP 9: Remote tools
+#=============================================================================
+info "[9/12] Installing remote tools..."
 brew_install tmux
-brew_install nmap
-brew_install netcat
-brew_install wireshark
+brew_install rsync
 
-info "Installing containers and reverse-engineering tools..."
-brew_install podman
-brew_install dive
-brew_install hexyl
-brew_install binwalk
-brew_install binutils
-
-info "Installing publishing tools..."
-brew_install quarto
-brew_install pandoc
-brew_install hugo
-brew_install tinytex
-brew_install asciidoctor
-brew_install glow
-
-info "Installing editors..."
+#=============================================================================
+# STEP 10: Editors
+#=============================================================================
+info "[10/12] Installing editors..."
 brew_install vim
 brew_install neovim
 brew_cask_install visual-studio-code
-brew_cask_install positron
 
-info "Installing automation tooling..."
+#=============================================================================
+# STEP 11: Automation
+#=============================================================================
+info "[11/12] Installing automation tools..."
 brew_install just
-brew_install hyperfine
 brew_install direnv
-if ! command_exists playwright; then
-    run "npm install -g playwright"
-fi
-if command_exists playwright; then
-    run "npx playwright install --with-deps || true"
-fi
-
-info "Installing utilities..."
 brew_install tldr
 
-info "Installing R packages..."
-if command_exists R; then
-    R --quiet -e 'pak::pak(c("knitr", "rmarkdown"))'
-fi
+#=============================================================================
+# STEP 12: SSH, Tailscale, Git config
+#=============================================================================
+info "[12/12] Configuring SSH, Tailscale, and Git..."
 
-info "Installing Julia packages..."
-if command_exists julia; then
-    julia -e 'using Pkg; Pkg.add("IJulia")'
-fi
-
-info "Configuring SSH..."
-if [ "$DRY_RUN" = true ]; then
-    printf "[DRY RUN] sudo systemsetup -setremotelogin on || true\n"
-else
-    sudo systemsetup -setremotelogin on || true
-fi
-run "mkdir -p ~/.ssh && chmod 700 ~/.ssh"
+# SSH key
+mkdir -p ~/.ssh && chmod 700 ~/.ssh
 if [ ! -f ~/.ssh/id_ed25519 ]; then
-    run "ssh-keygen -t ed25519 -N \"\" -f ~/.ssh/id_ed25519"
-fi
-append_if_missing ~/.ssh/config "# hello_world ssh config" $'\n# hello_world ssh config\nHost *\n    ServerAliveInterval 60\n    AddKeysToAgent yes\n    UseKeychain yes\n'
-if [ "$DRY_RUN" = true ]; then
-    printf "[DRY RUN] chmod 600 ~/.ssh/config\n"
-else
-    chmod 600 ~/.ssh/config
+    ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519
 fi
 
-info "Installing Tailscale..."
-brew_install tailscale
-if [ -d /Applications/Tailscale.app ]; then
-    run "open /Applications/Tailscale.app || true"
-fi
-info "Approve Tailscale in the menu bar, then continue."
-if [ "$DRY_RUN" = false ]; then
-    read -rp "Press Enter when done... "
-else
-    printf "[DRY RUN] skip Tailscale approval prompt\n"
-fi
+# Enable Remote Login
+sudo systemsetup -setremotelogin on 2>/dev/null || true
 
-info "Configuring Git..."
-if [ "$DRY_RUN" = false ]; then
-    read -rp "Git name: " GIT_NAME
-    read -rp "Git email: " GIT_EMAIL
-else
-    GIT_NAME="Dry Run"
-    GIT_EMAIL="dryrun@example.com"
-    printf "[DRY RUN] set Git name and email to %s / %s\n" "$GIT_NAME" "$GIT_EMAIL"
-fi
-run "git config --global user.name \"$GIT_NAME\""
-run "git config --global user.email \"$GIT_EMAIL\""
-run "git config --global init.defaultBranch main"
-run "git config --global core.pager delta"
-run "git config --global delta.side-by-side true"
+# Tailscale
+brew_cask_install tailscale
+[ -d /Applications/Tailscale.app ] && open /Applications/Tailscale.app
 
-if command_exists gh; then
-    run "gh auth login -p ssh -h github.com || true"
-fi
+echo ""
+echo "============================================================"
+echo "ADD SSH KEY TO GITHUB"
+echo "============================================================"
+echo ""
+cat ~/.ssh/id_ed25519.pub
+echo ""
+cat ~/.ssh/id_ed25519.pub | pbcopy && echo "(Copied to clipboard)"
+echo ""
+echo "1. Go to: https://github.com/settings/keys"
+echo "2. Click 'New SSH key' and paste"
+echo "============================================================"
+open "https://github.com/settings/keys"
 
-info "Installing VS Code extensions..."
-EXTENSIONS=(
-    ms-python.python ms-python.vscode-pylance ms-toolsai.jupyter
-    REditorSupport.r quarto.quarto ms-toolsai.datawrangler
-    mechatroner.rainbow-csv GrapeCity.gc-excelviewer qwtel.sqlite-viewer
-    duckdb.duckdb-vscode dbaeumer.vscode-eslint esbenp.prettier-vscode
-    ritwickdey.LiveServer humao.rest-client rangav.vscode-thunder-client
-    eamodio.gitlens mhutchie.git-graph usernamehw.errorlens
-    wayou.vscode-todo-highlight streetsidesoftware.code-spell-checker
-    christian-kohler.path-intellisense ms-vscode-remote.remote-ssh
-    ms-azuretools.vscode-docker redhat.vscode-yaml hashicorp.terraform
-    golang.go julialang.language-julia sumneko.lua
-    GitHub.copilot GitHub.copilot-chat
-)
-for ext in "${EXTENSIONS[@]}"; do
-    if command_exists code; then
-        run "code --install-extension \"$ext\" --force 2>/dev/null || true"
-    fi
-done
+[ "$DRY_RUN" = false ] && read -rp "Press Enter after adding SSH key..."
 
-info "Adding shell configuration..."
-append_if_missing ~/.zshrc "# hello_world bootstrap" $'\n# hello_world bootstrap\neval "$(/opt/homebrew/bin/brew shellenv)"\neval "$(zoxide init zsh)"\neval "$(direnv hook zsh)"\nalias ls=\'eza\'\nalias ll=\'eza -la\'\nalias cat=\'bat --style=plain\'\nalias grep=\'rg\'\nalias find=\'fd\'\nalias du=\'duf\'\nalias ps=\'procs\'\nalias rm=\'trash\'\nalias cd=\'z\'\nalias lg=\'lazygit\'\nalias gs=\'git status\'\nalias ga=\'git add\'\nalias gc=\'git commit\'\nalias gp=\'git push\'\nalias csv=\'xsv\'\nalias duck=\'duckdb\'\nalias http=\'xh\'\nalias pg=\'pgcli\'\nalias my=\'mycli\'\nalias lite=\'litecli\'\nalias tf=\'terraform\'\nalias cleanup=\'brew cleanup && npm cache clean --force && uv cache clean\'\n'
+echo ""
+info "Configure Tailscale in the menu bar, then continue."
+[ "$DRY_RUN" = false ] && read -rp "Press Enter when done..."
 
-info "Bootstrap complete. Run 'source ~/.zshrc' or restart your terminal to apply shell changes."
+# Git config
+echo ""
+[ "$DRY_RUN" = false ] && read -rp "Git name: " GIT_NAME || GIT_NAME="User"
+[ "$DRY_RUN" = false ] && read -rp "Git email: " GIT_EMAIL || GIT_EMAIL="user@example.com"
+git config --global user.name "$GIT_NAME"
+git config --global user.email "$GIT_EMAIL"
+git config --global init.defaultBranch main
+git config --global core.pager delta
 
-if [ "$(uname)" = "Darwin" ]; then
-    echo ""
-    echo "=== Done ==="
-    echo "Local SSH: $(whoami)@$(ipconfig getifaddr en0 2>/dev/null || echo 'unknown')"
-    echo "Tailscale SSH: $(whoami)@$(tailscale ip -4 2>/dev/null || echo 'approve device')"
-    echo ""
-    echo "GitHub Copilot: Sign in via VS Code (Ctrl+Shift+P → GitHub Copilot: Sign In)"
-fi
+# GitHub CLI auth
+command_exists gh && gh auth login -p ssh -h github.com || true
+
+# Shell config
+append_if_missing ~/.zshrc "# bootstrap" $'\n# bootstrap\neval "$(zoxide init zsh)"\neval "$(direnv hook zsh)"\nalias ls="eza"\nalias ll="eza -la"\nalias cat="bat --style=plain"\nalias lg="lazygit"\n'
+
+echo ""
+echo "============================================================"
+echo "BOOTSTRAP COMPLETE"
+echo "============================================================"
+echo ""
+echo "Run: source ~/.zshrc"
+echo ""
+echo "Local SSH:     $(whoami)@$(ipconfig getifaddr en0 2>/dev/null || echo 'unknown')"
+echo "Tailscale SSH: $(whoami)@$(tailscale ip -4 2>/dev/null || echo 'configure Tailscale')"
+echo ""

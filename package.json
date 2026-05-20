@@ -1,0 +1,18 @@
+{
+  "name": "job-scraper",
+  "version": "0.1.0",
+  "description": "Memory-efficient job board scraper",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node src/test.js",
+    "export": "node src/export.js",
+    "import": "node src/import_csv.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "playwright": "^1.40.0"
+  }
+}

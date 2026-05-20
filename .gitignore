@@ -1,0 +1,9 @@
+node_modules/
+data/output/*
+data/input/*.txt
+!data/input/.gitkeep
+!data/output/.gitkeep
+logs/*.log
+*.sqlite
+.env
+.temp_*
